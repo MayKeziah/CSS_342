@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/ass1.dir/main.cpp.o CMakeFiles/ass1.dir/library.cpp.o  -o ass1.exe -Wl,--out-implib,libass1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

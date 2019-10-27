@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass2/ass2-timespan-starter-master/main.cpp
+timespan.h
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass2/ass2-timespan-starter-master/timespan.h
+cassert
+-
+sstream
+-
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass2/ass2-timespan-starter-master/timespan.h
+iostream
+-
+

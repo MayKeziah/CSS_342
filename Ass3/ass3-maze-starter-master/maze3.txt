@@ -1,0 +1,8 @@
+34 6
+1 0
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   x      x      xx  xxxx   x x  x
+xx x x xxxx xx xxx        x    xxx
+xx x x      xx  xx xxxxxxxxxxx xxx
+xx   xxx xxxxxx           x      x
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

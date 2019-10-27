@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/ass2.dir/main.cpp.o CMakeFiles/ass2.dir/timespan.cpp.o  -o ass2.exe -Wl,--out-implib,libass2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Non_Class/LinkedStack/LinkedStackTest.cpp
+Stack.cpp
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Non_Class/LinkedStack/Stack.cpp
+iostream
+-
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Non_Class/LinkedStack/PrecondViolatedExcept.cpp
+PrecondViolatedExcept.h
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Non_Class/LinkedStack/PrecondViolatedExcept.h
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Non_Class/LinkedStack/PrecondViolatedExcept.h
+stdexcept
+-
+string
+-
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Non_Class/LinkedStack/Stack.cpp
+Stack.h
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Non_Class/LinkedStack/Stack.h
+cassert
+-
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Non_Class/LinkedStack/Stack.h
+PrecondViolatedExcept.cpp
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Non_Class/LinkedStack/PrecondViolatedExcept.cpp
+

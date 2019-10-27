@@ -1,0 +1,22 @@
+Sun Oct 13 21:07:31 PDT 2019
+*** compiling with clang++ to create an executable called myprogram
+clang version 7.0.1 (tags/RELEASE_701/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/rh/llvm-toolset-7.0/root/usr/bin
+*** running clang-tidy using options from .clang-tidy
+LLVM (http://llvm.org/):
+  LLVM version 7.0.1
+  Optimized build.
+  Default target: x86_64-unknown-linux-gnu
+  Host CPU: broadwell
+8233 warnings generated.
+/home/NETID/kezm/ass2-timespan-starter-master/timespan.cpp:24:30: warning: casting (double + 0.5) to integer leads to incorrect rounding; consider using lround (#include <cmath>) instead [bugprone-incorrect-roundings]
+    return static_cast<int> (Num + 0.5);
+                             ^
+Suppressed 8232 warnings (8232 in non-user code).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+*** running myprogram
+Passed all tests. Done.
+*** cleaning up, deleting myprogram
+Sun Oct 13 21:07:35 PDT 2019

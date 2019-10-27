@@ -1,0 +1,12 @@
+Sun Oct 27 11:16:58 PDT 2019
+*** compiling with clang++ to create an executable called myprogram
+./simplecompile.sh: line 20: clang++: command not found
+./simplecompile.sh: line 21: clang++: command not found
+*** running clang-tidy using options from .clang-tidy
+./simplecompile.sh: line 24: clang-tidy: command not found
+./simplecompile.sh: line 25: clang-tidy: command not found
+*** running myprogram
+./simplecompile.sh: line 28: ./myprogram: No such file or directory
+*** cleaning up, deleting myprogram
+rm: cannot remove 'myprogram': No such file or directory
+Sun Oct 27 11:16:58 PDT 2019

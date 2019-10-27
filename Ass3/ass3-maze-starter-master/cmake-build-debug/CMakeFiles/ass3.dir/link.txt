@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/ass3.dir/main.cpp.o CMakeFiles/ass3.dir/maze.cpp.o CMakeFiles/ass3.dir/creature.cpp.o  -o ../ass3.exe -Wl,--out-implib,libass3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

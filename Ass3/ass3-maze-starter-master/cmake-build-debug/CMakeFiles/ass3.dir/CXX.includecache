@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass3/ass3-maze-starter-master/creature.cpp
+iostream
+-
+bits/stdc++.h
+-
+creature.h
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass3/ass3-maze-starter-master/creature.h
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass3/ass3-maze-starter-master/creature.h
+maze.h
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass3/ass3-maze-starter-master/maze.h
+ostream
+-
+stack
+-
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass3/ass3-maze-starter-master/main.cpp
+iostream
+-
+cassert
+-
+creature.h
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass3/ass3-maze-starter-master/creature.h
+maze.h
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass3/ass3-maze-starter-master/maze.h
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass3/ass3-maze-starter-master/maze.cpp
+fstream
+-
+iostream
+-
+maze.h
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass3/ass3-maze-starter-master/maze.h
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass3/ass3-maze-starter-master/maze.h
+ostream
+-
+

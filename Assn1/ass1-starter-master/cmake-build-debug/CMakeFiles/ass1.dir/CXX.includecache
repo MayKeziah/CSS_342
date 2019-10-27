@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Assn1/ass1-starter-master/library.cpp
+library.h
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Assn1/ass1-starter-master/library.h
+iostream
+-
+
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Assn1/ass1-starter-master/library.h
+string
+-
+
