@@ -2,9 +2,9 @@
 // Created by Yusuf Pisan on 4/18/18.
 //
 
+#include "maze.h"
 #include <fstream>
 #include <iostream>
-#include "maze.h"
 
 using namespace std;
 
@@ -21,7 +21,8 @@ ostream &operator<<(ostream &Out, const Maze &Maze) {
 }
 
 // Constructor init Maze with Maze filename
-Maze::Maze(const string &FileName) {
+Maze::Maze(const string &FileName)
+: Width(0), Height(0), ExitRow(0), ExitColumn(0) {
   ifstream InFile;
   InFile.open(FileName);
   if (!InFile) {

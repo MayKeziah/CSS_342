@@ -2,13 +2,14 @@
 // Created by Yusuf Pisan on 4/18/18.
 //
 
-#include <iostream>
-#include <bits/stdc++.h>
+//#include <iostream>
 #include "creature.h"
+#include <bits/stdc++.h>
+
 
 // Creature represented by row, col.
 std::ostream &operator<<(std::ostream &Out, const Creature &Creature) {
-    Out << Creature.Row << ", " << Creature.Col; //TODO
+    Out << Creature.Row << ", " << Creature.Col;
   return Out;
 }
 
@@ -16,39 +17,48 @@ std::ostream &operator<<(std::ostream &Out, const Creature &Creature) {
 Creature::Creature(int Row, int Col) : Row(Row), Col(Col) {}
 
 // Answers: You are at the exit, T/F?
-bool Creature::atExit(const Maze &Maze) const {
-  return (Maze.getExitColumn() == Col) && (Maze.getExitRow() == Row);
+bool Creature::atExit(const Maze* Maze) const {
+  return (Maze->getExitColumn() == Col) && (Maze->getExitRow() == Row);
 }
 
 // Returns a string representing the series of directions
 // to the exit in form of NSEW (north, south, east, west).
 // If an Error occurs, it returns a string explaining the error.
-string Creature::solve(Maze &Maze) {
-    if (!inMaze(Maze))  {
-        return "Solve Error: Creature outside of Maze.";
+string Creature::solve(Maze& Maze) {
+    string Result;
+
+   if (!inMaze(&Maze))  {
+//        return "Solve Error: Creature outside of Maze.";
+        Result = "Solve Error: Creature outside of Maze.";
     }
-    if (Maze.isWall(Row, Col)){
-        return "Solve Error: creature is in a wall.";
+   else if (Maze.isWall(Row, Col)){
+//        return "Solve Error: creature is in a wall.";
+        Result = "Solve Error: creature is in a wall.";
     }
-    if (atExit(Maze)){
+   else if (atExit(&Maze)){
         Maze.markAsPath(Row, Col);
-        return pathString();
+//        return pathString();
+        Result = pathString();
     }
-    else{
-        findPath(Maze);
+   else{
+        findPath(&Maze);
         if (!Path.empty() && Path.top().length() > 1){
-            string error = Path.top();
+            string Error = Path.top();
             Path.pop();
-            return error;
+//            return Error;
+            Result = Error;
         }
-        return solve(Maze);
+        else {
+            return solve(Maze);
+        }
     }
+    return Result;
 }
 
 // Find the next possible step.
 // If successful, update path with new step.
 // If no steps are possible, backtrack one step.
-void Creature::findPath(Maze& Maze) {
+void Creature::findPath(Maze* Maze) {
     Path.push(goNorth(Maze));
     if (Path.top() == "X"){
         Path.pop();
@@ -69,112 +79,135 @@ void Creature::findPath(Maze& Maze) {
 }
 
 // Answers: the creature is inside the maze, T/F?
-bool Creature::inMaze(Maze& Maze) {
-    return (Row >= 0 && Row < Maze.getHeight()) && (Col >= 0 && Col < Maze.getWidth());
+bool Creature::inMaze(Maze* Maze) {
+    return (Row >= 0 && Row < Maze->getHeight()) && (Col >= 0 && Col < Maze->getWidth());
 }
 
 // Try to step north (up),
 // If successful, Return "N", mark current position as path, update Row.
 // Return "X" if unsuccessful.
-string Creature::goNorth(Maze &Maze) {
+string Creature::goNorth(Maze* Maze) {
+    string Step;
     if (atExit(Maze)){
-        return "";
+//        return "";
+        Step = "";
     }
-    else if (Maze.isClear(Row - 1, Col)){
-        Maze.markAsPath(Row, Col);
+    else if (Maze->isClear(Row - 1, Col)){
+        Maze->markAsPath(Row, Col);
         Row--;
-        return "N";
+//        return "N";
+        Step = "N";
     }
     else{
-        return "X";
+//        return "X";
+        Step = "X";
     }
+    return Step;
 }
 
 // Try to step West (left),
 // If successful, Return "W", mark current position as path, update Col.
 // Returns "X" if unsuccessful.
-string Creature::goWest(Maze &Maze) {
+string Creature::goWest(Maze* Maze) {
+    string Step;
     if (atExit(Maze)){
-        return "";
+//        return "";
+        Step = "";
     }
-    else if (Maze.isClear(Row, Col - 1)){
-        Maze.markAsPath(Row, Col);
+    else if (Maze->isClear(Row, Col - 1)){
+        Maze->markAsPath(Row, Col);
         Col--;
-        return "W";
+//        return "W";
+        Step = "W";
     }
     else{
-        return "X";
+//        return "X";
+        Step = "X";
     }
+    return Step;
 }
 
 // Try to step south (down),
 // If successful, Return "S", mark current position as path, update Row.
 // Returns "X" if unsuccessful.
-string Creature::goSouth(Maze &Maze) {
+string Creature::goSouth(Maze* Maze) {
+    string Step;
     if (atExit(Maze)){
-        return "";
+//        return "";
+        Step = "";
     }
-    else if (Maze.isClear(Row + 1, Col)){
-        Maze.markAsPath(Row, Col);
+    else if (Maze->isClear(Row + 1, Col)){
+        Maze->markAsPath(Row, Col);
         Row++;
-        return "S";
+//        return "S";
+        Step = "S";
     }
     else{
-        return "X";
+//        return "X";
+        Step = "X";
     }
+    return Step;
 }
 
 // Try to step East (right),
 // If successful, Return "E", mark current position as path, update Col.
 // Returns "X" if unsuccessful.
-string Creature::goEast(Maze &Maze) {
+string Creature::goEast(Maze* Maze) {
+    string Step;
     if (atExit(Maze)){
-        Maze.markAsPath(Row, Col);
-        return "";
+        Maze->markAsPath(Row, Col);
+//        return "";
+        Step = "";
     }
-    else if (Maze.isClear(Row, Col + 1)){
-        Maze.markAsPath(Row, Col);
+    else if (Maze->isClear(Row, Col + 1)){
+        Maze->markAsPath(Row, Col);
         Col++;
-        return "E";
+//        return "E";
+        Step = "E";
     }
     else{
-        return "X";
+//        return "X";
+        Step = "X";
     }
+    return Step;
 }
 
 // Mark current position as visited, but not path to exit.
 // Take one step back
 // If unsuccessful, pushes error to path.
-void Creature::backTrack(Maze & Maze) {
+void Creature::backTrack(Maze* Maze) {
         if (Path.empty()){
             Path.push("Backtrack Error: Stack empty, no available path.");
-            return;
+//            Path.push("toPop");
+//            return;
         }
         else{
             Path.pop();
             if (Path.empty()){
                 Path.push("Backtrack Error: No exit found.");
-                return;
+                Path.push("toPop");
+//                return;
             }
-            if (Path.top() == "N"){
-                Maze.markAsVisited(Row, Col);
+            else if (Path.top() == "N"){
+                Maze->markAsVisited(Row, Col);
                 Row++;
             }
             else if (Path.top() == "W"){
-                Maze.markAsVisited(Row, Col);
+                Maze->markAsVisited(Row, Col);
                 Col++;
             }
             else if (Path.top() == "S"){
-                Maze.markAsVisited(Row, Col);
+                Maze->markAsVisited(Row, Col);
                 Row--;
             }
             else if (Path.top() == "E") {
-                Maze.markAsVisited(Row, Col);
+                Maze->markAsVisited(Row, Col);
                 Col--;
             }
             else {
                 Path.push("Backtrack Error: stack contains invalid string.");
-                return;
+//                return;
+                Path.push("toPop");
             }
             Path.pop();
         }
@@ -183,11 +216,11 @@ void Creature::backTrack(Maze & Maze) {
 // Empties path stack!
 // Returns string representation of path steps by directions: NSEW.
 string Creature::pathString() {
-    string steps;
+    string Steps;
     while(!Path.empty()){
-        steps += Path.top();
+        Steps += Path.top();
         Path.pop();
     }
-    reverse(steps.begin(), steps.end());
-    return steps;
+    reverse(Steps.begin(), Steps.end());
+    return Steps;
 }

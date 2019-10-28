@@ -16,7 +16,7 @@ class Maze {
   friend ostream &operator<<(ostream &Out, const Maze &Maze);
 private:
   const static int MAX_SIZE = 100;
-  char Field[MAX_SIZE][MAX_SIZE];
+  char Field[MAX_SIZE][MAX_SIZE] = {{' '}};
   int Width, Height;
   int ExitRow, ExitColumn;
 public:

@@ -1,8 +1,7 @@
-#include <iostream>
-#include <cassert>
-
 #include "creature.h"
 #include "maze.h"
+#include <cassert>
+#include <iostream>
 
 // Visual test of maze.txt
 void test() {
