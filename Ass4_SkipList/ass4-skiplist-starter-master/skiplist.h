@@ -84,7 +84,7 @@ private:
 
   // given a string array with matching depth, converts each level
   // to a string and stores it in the associated string array index.
-  void toString(string* Levels) const;
+  void stringsByLvl(string* Levels) const;
 
 public:
   // default SkipList has Depth of 1, just one doubly-linked list

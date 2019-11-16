@@ -16,7 +16,7 @@ ostream &operator<<(ostream &Out, const SkipList &SkipL) {
     for (int I = SkipL.Depth - 1; I > -1 ; I--) {
         Levels[I] += "L" + to_string(I) + ":\t"; // "L0:  "
     }
-    SkipL.toString(Levels);
+    SkipL.stringsByLvl(Levels);
     return Out;
 }
 
@@ -101,7 +101,7 @@ void SkipList::setGuards(){
 
 // given a string array with matching depth, converts each level
 // to a string and stores it in the associated string array index.
-void SkipList::toString(string* Levels) const{
+void SkipList::stringsByLvl(string* Levels) const{
     for (int I = 0; I < Depth; I++){
         SNode* Current = FrontGuards[I];
         while(Current != RearGuards[I]){

@@ -74,7 +74,7 @@ int main() {
 //  test02();
 //  cout << "Passed: " << TotalPassed << "/" << TotalTests << endl;
 
-    cout << "Testing add()..." << endl;
+    cout << "Testing Constructor and <<..." << endl;
 
     cout << "...all testing passed!" << endl;
   return 0;
