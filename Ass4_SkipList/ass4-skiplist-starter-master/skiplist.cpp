@@ -16,7 +16,9 @@ ostream &operator<<(ostream &Out, const SkipList &SkipL) {
 }
 
 // Explicit constructor. Data is the value to store in the SNode
-SkipList::SNode::SNode(int Data) {}
+SkipList::SNode::SNode(int Data) {
+    this->Data = Data;
+}
 
 // Explicit Constructor. Depth is the number of levels in list. Default = 1.
 SkipList::SkipList(int Depth) {
