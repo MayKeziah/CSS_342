@@ -24,7 +24,7 @@ SkipList::SNode::SNode(int Data) {
 // Throws Invalid Argument Exception for Depths less than 1.
 SkipList::SkipList(int Depth) {
     if (setDepth(Depth)){
-
+        setGuards();
     } else{
         throw new invalid_argument(
                 "SkipList Constructor: "
@@ -45,7 +45,7 @@ void SkipList::addBefore(SNode *NewNode, SNode *NextNode) {
 }
 
 // Duplicate this node in higher level
-void SkipList::duplicateAbove(SNode* OrigNode){
+SNode& SkipList::duplicateAbove(SNode* OrigNode){
     OrigNode->UpLevel = new SNode(OrigNode->Data);
     OrigNode->UpLevel->DownLevel = OrigNode;
 }
@@ -65,6 +65,9 @@ void SkipList::setGuards(){
     RearGuards  = new SNode*[Depth];
     FrontGuards[0] = new SNode(INT_MIN);
     RearGuards [0] = new SNode(INT_MAX);
+    for (int i = 0; i < Depth - 1; i++){
+        duplicateAbove(FrontGuards[i]);
+    }
 }
 
 // Delete memory on Heap
