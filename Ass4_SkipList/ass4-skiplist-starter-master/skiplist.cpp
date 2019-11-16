@@ -39,17 +39,15 @@ bool SkipList::add(int Data) {
   return true;
 }
 
-// Add the NewNode into the position before NextNode (Horizontally). TODO: simplify repeated code
+// Add the NewNode into the position before NextNode (Horizontally).
 void SkipList::addBefore(SNode *NewNode, SNode *NextNode) {
-    if (NextNode->Prev == nullptr){
-        NextNode->Prev = NewNode;
-        NewNode->Next = NextNode;
-    } else{
-        SNode* tmp = NextNode->Prev;
-        NextNode->Prev = NewNode;
-        NewNode->Next = NextNode;
-        NewNode->Prev = tmp;
+    if (NextNode->Prev != nullptr){
+        SNode* Tmp = NextNode->Prev;
+        NewNode->Prev = Tmp;
+        Tmp->Next = NewNode;
     }
+    NextNode->Prev = NewNode;
+    NewNode->Next = NextNode;
 }
 
 // Duplicate this node in higher level TODO: addBefore
