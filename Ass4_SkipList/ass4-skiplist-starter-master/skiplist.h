@@ -62,7 +62,7 @@ private:
   bool alsoHigher() const;
 
   // Duplicate this node in higher level
-  SNode& duplicateAbove(SNode* OrigNode);
+  SNode* duplicateAbove(SNode* OrigNode);
 
   // Safely sets the depth of the SkipList. True if successful.
   bool setDepth(int Depth);
