@@ -77,9 +77,10 @@ void SkipList::setGuards(){
     FrontGuards[0] = new SNode(INT_MIN);
     RearGuards [0] = new SNode(INT_MAX);
     for (int i = 0; i < Depth - 1; i++){
-        duplicateAbove(FrontGuards[i]);
-        duplicateAbove(RearGuards[i]);
-    }
+        addBefore(FrontGuards[i], RearGuards[i]);
+        FrontGuards[i + 1] = duplicateAbove(FrontGuards[i]);
+        RearGuards [i + 1] = duplicateAbove(RearGuards [i]);
+    }   addBefore(FrontGuards[Depth - 1], RearGuards[Depth - 1]);
 }
 
 // Delete memory on Heap
