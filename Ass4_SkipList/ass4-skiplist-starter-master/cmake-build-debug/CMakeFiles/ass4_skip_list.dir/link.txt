@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/ass4_skip_list.dir/skiplist.cpp.o CMakeFiles/ass4_skip_list.dir/main.cpp.o  -o ass4_skip_list.exe -Wl,--out-implib,libass4_skip_list.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

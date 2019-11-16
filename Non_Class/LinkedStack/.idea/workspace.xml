@@ -12,8 +12,214 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1792fc3e-a173-46b7-8a2e-bb9893b34652" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/.clang-tidy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/.idea/ass2-timespan-starter-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/ass2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/ass2.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/ass2.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/ass2.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/ass2.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/ass2.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/ass2.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/ass2.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/ass2.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/ass2.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/ass2.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/ass2.dir/timespan.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/ass2.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/ass2.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/simplecompile.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/timespan.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass2/ass2-timespan-starter-master/timespan.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/.clang-tidy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/.idea/ass3-maze-starter-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/ass3.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/ass3.exe.stackdump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/ass3.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/ass3.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/ass3.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/ass3.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/ass3.dir/creature.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/ass3.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/ass3.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/ass3.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/ass3.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/ass3.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/ass3.dir/maze.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/ass3.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/ass3.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/creature.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/creature.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/maze.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/maze.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/maze.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/maze1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/maze2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/maze3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/ass3-maze-starter-master/simplecompile.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ass3/toSubmit/ass3.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/.idea/ass1-starter-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/ass1.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/ass1.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/ass1.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/ass1.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/ass1.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/ass1.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/ass1.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/ass1.dir/library.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/ass1.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/ass1.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/ass1.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/ass1.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/ass1.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/ass1.exe.stackdump" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/library.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/library.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1-starter-master/simplecompile.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/.idea/ass1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/3.15.3/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/ass1.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/ass1.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/ass1.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/ass1.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/ass1.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/ass1.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/ass1.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/ass1.dir/library.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/ass1.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/ass1.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/ass1.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/ass1.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/ass1.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/cmake-build-debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/library.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/library.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Assn1/ass1/simplecompile.sh" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +279,7 @@
       <workItem from="1571600431285" duration="174000" />
       <workItem from="1571600608377" duration="8252000" />
       <workItem from="1573607582645" duration="293000" />
+      <workItem from="1573921529113" duration="118000" />
     </task>
     <servers />
   </component>
@@ -84,7 +291,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
