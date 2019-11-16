@@ -80,6 +80,10 @@ private:
   // Creates array of Guard pointers and fills them with MIN and MAX SNodes.
   void setGuards();
 
+  // given a string array with matching depth, converts each level
+  // to a string and stores it in the associated string array index.
+  void toString(string* Levels) const;
+
 public:
   // default SkipList has Depth of 1, just one doubly-linked list
   explicit SkipList(int Depth = 1);

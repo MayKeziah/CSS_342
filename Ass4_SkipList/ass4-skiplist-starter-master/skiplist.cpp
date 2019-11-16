@@ -12,7 +12,12 @@ using namespace std;
 
 // Insert a representation of this Skiplst into an ostream
 ostream &operator<<(ostream &Out, const SkipList &SkipL) {
-  return Out;
+    string* Levels = new string[SkipL.Depth];
+    for (int I = SkipL.Depth - 1; I > -1 ; I--) {
+        Levels[I] += "L" + to_string(I) + ":\t"; // "L0:  "
+    }
+    SkipL.toString(Levels);
+    return Out;
 }
 
 // Explicit constructor. Data is the value to store in the SNode
@@ -76,11 +81,17 @@ void SkipList::setGuards(){
     RearGuards  = new SNode*[Depth];
     FrontGuards[0] = new SNode(INT_MIN);
     RearGuards [0] = new SNode(INT_MAX);
-    for (int i = 0; i < Depth - 1; i++){
-        addBefore(FrontGuards[i], RearGuards[i]);
-        FrontGuards[i + 1] = duplicateAbove(FrontGuards[i]);
-        RearGuards [i + 1] = duplicateAbove(RearGuards [i]);
+    for (int I = 0; I < Depth - 1; I++){
+        addBefore(FrontGuards[I], RearGuards[I]);
+        FrontGuards[I + 1] = duplicateAbove(FrontGuards[I]);
+        RearGuards [I + 1] = duplicateAbove(RearGuards [I]);
     }   addBefore(FrontGuards[Depth - 1], RearGuards[Depth - 1]);
+}
+
+// given a string array with matching depth, converts each level
+// to a string and stores it in the associated string array index.
+void SkipList::toString(string* Levels) const{
+
 }
 
 // Delete memory on Heap
