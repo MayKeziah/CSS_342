@@ -50,7 +50,7 @@ void SkipList::addBefore(SNode *NewNode, SNode *NextNode) {
     NewNode->Next = NextNode;
 }
 
-// Duplicate this node in higher level TODO: addBefore
+// Duplicate this node in higher level
 SkipList::SNode* SkipList::duplicateAbove(SNode* OrigNode){
     OrigNode->UpLevel = new SNode(OrigNode->Data);
     SNode* NewDuplicate = OrigNode->UpLevel;
