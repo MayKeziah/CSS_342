@@ -68,6 +68,7 @@ void SkipList::setGuards(){
     RearGuards [0] = new SNode(INT_MAX);
     for (int i = 0; i < Depth - 1; i++){
         duplicateAbove(FrontGuards[i]);
+        duplicateAbove(RearGuards[i]);
     }
 }
 
