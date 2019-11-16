@@ -5,6 +5,7 @@
 #include "skiplist.h"
 #include <iostream>
 #include <sstream>
+#include <cassert>
 
 using namespace std;
 
@@ -75,7 +76,11 @@ int main() {
 //  cout << "Passed: " << TotalPassed << "/" << TotalTests << endl;
 
     cout << "Testing Constructor and <<..." << endl;
+    SkipList Test(1);
+    cout << Test << endl;
 
+    SkipList Test2(5);
+    cout << "\n" << Test2 << endl;
     cout << "...all testing passed!" << endl;
   return 0;
 }

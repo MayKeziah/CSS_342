@@ -12,11 +12,12 @@ using namespace std;
 
 // Insert a representation of this Skiplst into an ostream
 ostream &operator<<(ostream &Out, const SkipList &SkipL) {
-    string* Levels = new string[SkipL.Depth];
-    for (int I = SkipL.Depth - 1; I > -1 ; I--) {
-        Levels[I] += "L" + to_string(I) + ":\t"; // "L0:  "
-    }
+    auto* Levels = new string[SkipL.Depth];
     SkipL.stringsByLvl(Levels);
+    for (int I = SkipL.Depth - 1; I > -1 ; I--) {
+        Out << Levels[I] << endl;
+    }
+    delete[] Levels;
     return Out;
 }
 
@@ -103,6 +104,7 @@ void SkipList::setGuards(){
 // to a string and stores it in the associated string array index.
 void SkipList::stringsByLvl(string* Levels) const{
     for (int I = 0; I < Depth; I++){
+        Levels[I] += "L" + to_string(I) + ":\t";
         SNode* Current = FrontGuards[I];
         while(Current != RearGuards[I]){
             Levels[I] += Current->toString() + "<->";
