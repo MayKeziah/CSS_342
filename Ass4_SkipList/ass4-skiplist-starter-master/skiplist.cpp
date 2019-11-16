@@ -102,9 +102,12 @@ void SkipList::setGuards(){
 // given a string array with matching depth, converts each level
 // to a string and stores it in the associated string array index.
 void SkipList::toString(string* Levels) const{
-    SNode* Current = FrontGuards[0];
-    while(Current != nullptr){
-        Levels[0] += Current;
+    for (int I = 0; I < Depth; I++){
+        SNode* Current = FrontGuards[I];
+        while(Current != RearGuards[I]){
+            Levels[I] += Current->toString() + "<->";
+            Current = Current->Next;
+        } Levels[I] += Current->toString();
     }
 
 }
