@@ -42,15 +42,17 @@ private:
     // link to down one level
     SNode *DownLevel;
 
-    // display SNode
-    friend ostream &operator<<(ostream &Out, SNode &N) {
-        if (N.Data == INT_MIN || N.Data == INT_MAX){
-            Out << "|";
-        } else{
-            Out << "(" << N.Data << ")";
-        }
-        return Out;
-    }
+//    // display SNode
+//    friend ostream &operator<<(ostream &Out, SNode &N) {
+//        if (N.Data == INT_MIN || N.Data == INT_MAX){
+//            Out << "|";
+//        } else{
+//            Out << "(" << N.Data << ")";
+//        }
+//        return Out;
+//    }
+    // Convert SNode to string for output
+    string toString() const;
   };
 
   using Snode = struct Snode; //TODO understand purpose

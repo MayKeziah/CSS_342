@@ -24,6 +24,17 @@ ostream &operator<<(ostream &Out, const SkipList &SkipL) {
 SkipList::SNode::SNode(int Data): Data{Data},
 Prev{nullptr}, Next{nullptr}, UpLevel{nullptr}, DownLevel {nullptr}{}
 
+// Convert SNode to string for output
+string SkipList::SNode::toString() const {
+    string Out;
+    if (Data == INT_MIN || Data == INT_MAX){
+        Out += "|";
+    } else{
+        Out += "(" + to_string(Data) + ")";
+    }
+    return Out;
+}
+
 // Explicit Constructor. Depth is the number of levels in list. Default = 1.
 // Throws Invalid Argument Exception for Depths less than 1.
 SkipList::SkipList(int Depth) {
