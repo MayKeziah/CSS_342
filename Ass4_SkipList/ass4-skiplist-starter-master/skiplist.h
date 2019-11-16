@@ -61,6 +61,9 @@ private:
   // each node has a 50% chance of being at higher level
   bool alsoHigher() const;
 
+  // Duplicate this node in higher level
+  void duplicate(SNode* OrigNode);
+
   // Safely sets the depth of the SkipList. True if successful.
   bool setDepth(int Depth);
 

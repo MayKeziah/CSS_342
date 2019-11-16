@@ -44,6 +44,12 @@ bool SkipList::add(int Data) {
 void SkipList::addBefore(SNode *NewNode, SNode *NextNode) {
 }
 
+// Duplicate this node in higher level
+void SkipList::duplicate(SNode* OrigNode){
+    OrigNode->UpLevel = new SNode(OrigNode->Data);
+    OrigNode->UpLevel->DownLevel = OrigNode;
+}
+
 // Safely sets the depth of the SkipList. True if successful.
 bool SkipList::setDepth(int Depth){
     if(Depth > 0){
