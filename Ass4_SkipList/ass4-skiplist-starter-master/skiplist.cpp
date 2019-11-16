@@ -16,9 +16,8 @@ ostream &operator<<(ostream &Out, const SkipList &SkipL) {
 }
 
 // Explicit constructor. Data is the value to store in the SNode
-SkipList::SNode::SNode(int Data) {
-    this->Data = Data;
-}
+SkipList::SNode::SNode(int Data): Data{Data},
+Prev{nullptr}, Next{nullptr}, UpLevel{nullptr}, DownLevel {nullptr}{}
 
 // Explicit Constructor. Depth is the number of levels in list. Default = 1.
 // Throws Invalid Argument Exception for Depths less than 1.
@@ -40,11 +39,20 @@ bool SkipList::add(int Data) {
   return true;
 }
 
-// Add the NewNode into the position before NextNode (Horizontally).
+// Add the NewNode into the position before NextNode (Horizontally). TODO: simplify repeated code
 void SkipList::addBefore(SNode *NewNode, SNode *NextNode) {
+    if (NextNode->Prev == nullptr){
+        NextNode->Prev = NewNode;
+        NewNode->Next = NextNode;
+    } else{
+        SNode* tmp = NextNode->Prev;
+        NextNode->Prev = NewNode;
+        NewNode->Next = NextNode;
+        NewNode->Prev = tmp;
+    }
 }
 
-// Duplicate this node in higher level
+// Duplicate this node in higher level TODO: addBefore
 SkipList::SNode* SkipList::duplicateAbove(SNode* OrigNode){
     OrigNode->UpLevel = new SNode(OrigNode->Data);
     OrigNode->UpLevel->DownLevel = OrigNode;
