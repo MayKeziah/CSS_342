@@ -22,6 +22,8 @@ SkipList::SNode::SNode(int Data) {
 
 // Explicit Constructor. Depth is the number of levels in list. Default = 1.
 SkipList::SkipList(int Depth) {
+
+    this->Depth = Depth;
 }
 
 // T/F: The value of this SNode is also stored up one level.
@@ -34,6 +36,15 @@ bool SkipList::add(int Data) {
 
 // Add the NewNode into the position before NextNode (Horizontally).
 void SkipList::addBefore(SNode *NewNode, SNode *NextNode) {
+}
+
+// Safely sets the depth of the SkipList. True if successful.
+bool SkipList::setDepth(int Depth){
+    if(Depth > 0){
+        this->Depth = Depth;
+        return true;
+    }
+    return false;
 }
 
 // Delete memory on Heap

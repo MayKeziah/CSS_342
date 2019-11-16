@@ -61,6 +61,9 @@ private:
   // each node has a 50% chance of being at higher level
   bool alsoHigher() const;
 
+  // Safely sets the depth of the SkipList. True if successful.
+  bool setDepth(int Depth);
+
 public:
   // default SkipList has Depth of 1, just one doubly-linked list
   explicit SkipList(int Depth = 1);
