@@ -64,6 +64,9 @@ private:
   // Safely sets the depth of the SkipList. True if successful.
   bool setDepth(int Depth);
 
+  // Creates array of Guard pointers and fills them with MIN and MAX SNodes.
+  void setGuards();
+
 public:
   // default SkipList has Depth of 1, just one doubly-linked list
   explicit SkipList(int Depth = 1);

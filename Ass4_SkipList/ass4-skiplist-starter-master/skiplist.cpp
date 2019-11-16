@@ -21,9 +21,15 @@ SkipList::SNode::SNode(int Data) {
 }
 
 // Explicit Constructor. Depth is the number of levels in list. Default = 1.
+// Throws Invalid Argument Exception for Depths less than 1.
 SkipList::SkipList(int Depth) {
+    if (setDepth(Depth)){
 
-    this->Depth = Depth;
+    } else{
+        throw new invalid_argument(
+                "SkipList Constructor: "
+                "SkipList must have one or more levels.");
+    }
 }
 
 // T/F: The value of this SNode is also stored up one level.
@@ -45,6 +51,14 @@ bool SkipList::setDepth(int Depth){
         return true;
     }
     return false;
+}
+
+// Creates array of Guard pointers and fills them with MIN and MAX SNodes.
+void SkipList::setGuards(){
+    FrontGuards = new SNode*[Depth];
+    RearGuards  = new SNode*[Depth];
+    FrontGuards[0] = new SNode(INT_MIN);
+    RearGuards [0] = new SNode(INT_MAX);
 }
 
 // Delete memory on Heap
