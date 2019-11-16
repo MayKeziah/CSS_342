@@ -45,7 +45,7 @@ private:
     // display SNode
     friend ostream &operator<<(ostream &Out, SNode &N) {
         if (N.Data == INT_MIN || N.Data == INT_MAX){
-            Out << "||";
+            Out << "|";
         } else{
             Out << "(" << N.Data << ")";
         }
