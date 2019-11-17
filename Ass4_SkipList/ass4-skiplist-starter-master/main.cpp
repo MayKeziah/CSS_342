@@ -90,8 +90,8 @@ int main() {
 
     }
     cout << "\n" << Test2 << endl;
-//    Test2.remove(9);
-//    cout << "\n" << Test2 << endl;
+    Test2.remove(9);
+    cout << "\n" << Test2 << endl;
 //    cout << Test2.contains(9) << endl;
 //
 ////    Test2.clear();
