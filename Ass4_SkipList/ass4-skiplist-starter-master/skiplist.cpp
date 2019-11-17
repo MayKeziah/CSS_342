@@ -109,7 +109,17 @@ void SkipList::addBefore(SNode *NewNode, SNode *NextNode) {
 
 // removes all added SNodes, leaving only the front and rear guards.
 void SkipList::clear(){
-    
+    SNode* CurrNode;
+    SNode* NxtNode;
+    for (int Level = Depth - 1; Level >=0; Level--){
+        CurrNode = FrontGuards[Level]->Next;
+        NxtNode = CurrNode->Next;
+        while(CurrNode != RearGuards[Level]){
+            removeColumn(CurrNode);
+            CurrNode = NxtNode;
+            NxtNode = CurrNode->Next;
+        }
+    }
 }
 
 // Duplicate this node in higher level
