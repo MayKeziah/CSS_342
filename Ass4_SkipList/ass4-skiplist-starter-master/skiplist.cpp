@@ -71,16 +71,18 @@ bool SkipList::add(int Data) {
     int CurrLevel = Depth - 1;
     SNode* Current = FrontGuards[CurrLevel];
     SNode* CoinTossNexts[Depth];
+    bool CanAdd = false;
     for (int I = Depth - 1; I > 0; I--){
         CoinTossNexts[I] = findNext(Current, Data);
         if (CoinTossNexts[I]->Data == Data){
-            return false;
+            CanAdd = false;
+            return CanAdd;
         }
         Current = CoinTossNexts[I]->DownLevel;
     }
     CoinTossNexts[0] = findNext(Current, Data);
     if (CoinTossNexts[0]->Data == Data){
-        return false;
+        CanAdd = false;
     }
     else{
         SNode* ToAdd = new SNode(Data);
@@ -90,12 +92,13 @@ bool SkipList::add(int Data) {
                 ToAdd = duplicateAbove(ToAdd);
                 addBefore(ToAdd, CoinTossNexts[I]);;
             } else {
-                return true;
+                CanAdd = true;
+                return CanAdd;
             }
         }
-        delete[] ToAdd;
-        return true;
+        CanAdd = true;
     }
+    return CanAdd;
 }
 
 // Add the NewNode into the position before NextNode (Horizontally).
