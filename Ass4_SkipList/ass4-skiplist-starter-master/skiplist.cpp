@@ -61,8 +61,8 @@ bool SkipList::add(int Data) {
     int CurrLevel = Depth - 1;
     SNode* Current = FrontGuards[CurrLevel];
     SNode* CoinTossNexts[Depth];
-    for (auto* Elt: CoinTossNexts){
-        Elt = nullptr;
+    for (int Level = 0; Level < Depth; Level++){
+        CoinTossNexts[Level] = nullptr;
     }
     bool CanAdd = false;
     for (int I = Depth - 1; I > 0; I--){
