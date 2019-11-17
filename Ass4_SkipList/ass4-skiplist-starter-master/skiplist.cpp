@@ -63,7 +63,7 @@ SkipList::SkipList(int Depth) {
 bool SkipList::alsoHigher() const { return (rand() % 2) == 1; }
 
 // Add a new value to the SkipList. No duplicates. True if successful.
-bool SkipList::add(int Data) { //TODO
+bool SkipList::add(int Data) {
     int CurrLevel = Depth - 1;
     SNode* Current = FrontGuards[CurrLevel];
     SNode* CoinTossNexts[Depth];
@@ -105,6 +105,11 @@ void SkipList::addBefore(SNode *NewNode, SNode *NextNode) {
     }
     NextNode->Prev = NewNode;
     NewNode->Next = NextNode;
+}
+
+// removes all added SNodes, leaving only the front and rear guards.
+void SkipList::clear(){
+    
 }
 
 // Duplicate this node in higher level

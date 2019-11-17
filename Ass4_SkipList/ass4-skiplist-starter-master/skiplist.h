@@ -70,6 +70,9 @@ private:
   // each node has a 50% chance of being at higher level
   bool alsoHigher() const;
 
+  // removes all added SNodes, leaving only the front and rear guards.
+  void clear();
+
   // Duplicate this node in higher level
   SNode* duplicateAbove(SNode* OrigNode);
 
@@ -82,7 +85,7 @@ private:
   // Safely sets the depth of the SkipList. True if successful.
   bool setDepth(int Depth);
 
-  // Creates array of Guard pointers and fills them with MIN and MAX SNodes.
+  // Creates array of Guard pointers and fills them with MIN and MAX SNodes. 
   void setGuards();
 
   // given a string array with matching depth, converts each level
