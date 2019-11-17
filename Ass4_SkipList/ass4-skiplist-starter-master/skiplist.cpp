@@ -55,9 +55,12 @@ bool SkipList::alsoHigher() const { return (rand() % 2) == 1; }
 bool SkipList::add(int Data) { //TODO
     int CurrLevel = Depth - 1;
     SNode* Current = FrontGuards[CurrLevel];
-    SNode** CoinTossNexts = new SNode*[Depth];
+    SNode* CoinTossNexts[Depth];
     for (int I = Depth - 1; I > 0; I--){
         CoinTossNexts[I] = findNext(Current, Data);
+        if (CoinTossNexts[I]->Data == Data){
+            return false;
+        }
         Current = CoinTossNexts[I]->DownLevel;
     }
     CoinTossNexts[0] = findNext(Current, Data);
@@ -173,13 +176,17 @@ SkipList::~SkipList() {
 }
 
 // Remove a value from the SkipList. True if successful.
-bool SkipList::remove(int Data) { return false; }
+bool SkipList::remove(int Data) {
+
+    return false;
+}
 
 // T/F: The SkipList contains given Data value.
 bool SkipList::contains(int Data) {
     SNode* Current = findNext(FrontGuards[Depth - 1], Data);
     for (int I = Depth - 1; I > 0; I--){
         if (Current->Data == Data){
+//            cout << endl << Data << " true at " << I << endl;
             return true;
         }
         Current = findNext(Current->DownLevel, Data);
