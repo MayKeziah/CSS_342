@@ -55,6 +55,29 @@ bool SkipList::alsoHigher() const { return true; }
 bool SkipList::add(int Data) { //TODO
     int CurrLevel = Depth - 1;
     SNode* Current = FrontGuards[CurrLevel];
+    SNode** CoinTossNexts = new SNode*[Depth];
+    for (int I = Depth - 1; I > 0; I--){
+        CoinTossNexts[I] = findNext(Current, Data);
+        Current = CoinTossNexts[I]->DownLevel;
+    }
+    CoinTossNexts[0] = findNext(Current, Data);
+    if (CoinTossNexts[0]->Data == Data){
+        return false;
+    }
+    else{
+        SNode* ToAdd = new SNode(Data);
+        addBefore(ToAdd, CoinTossNexts[0]);
+        for (int I = 1; I < Depth; I++){
+            if ((rand() % 2) == 1){
+                return true;
+            } else {
+                ToAdd = duplicateAbove(ToAdd);
+                addBefore(ToAdd, CoinTossNexts[I]);
+            }
+        }
+        return true;
+
+    }
 
   return true;
 }
