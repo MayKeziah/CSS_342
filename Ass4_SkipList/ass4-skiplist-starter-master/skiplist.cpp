@@ -13,7 +13,7 @@ using namespace std;
 // Insert a representation of this Skiplst into an ostream
 ostream &operator<<(ostream &Out, const SkipList &SkipL) {
     auto* Levels = new string[SkipL.Depth];
-    SkipL.stringsByLvl(Levels);
+    SkipL.strings(Levels);
     for (int I = SkipL.Depth - 1; I > -1 ; I--) {
         Out << Levels[I] << endl;
     }
@@ -104,7 +104,8 @@ SkipList::SNode* SkipList::duplicateAbove(SNode* OrigNode){
     return NewDuplicate;
 }
 
-//finds the next SNode if the data were added to this level
+// finds the next SNode if the data were added to this level
+// If this level contains Data, it returns that node.
 SkipList::SNode* SkipList::findNext(SNode* Start, int Data){
     SNode* Current = Start;
     while (Data < Current->Data){
@@ -142,12 +143,12 @@ void SkipList::setGuards(){
 // to a string and stores it in the associated string array index.
 void SkipList::strings(string* Levels) const{
     for (int I = 0; I < Depth; I++){
-        Levels[I] += "Level: " + to_string(I) + ": -- ";
+        Levels[I] += "Level: " + to_string(I) + " -- ";
         SNode* Current = FrontGuards[I];
-        while(Current != RearGuards[I]){
-            Levels[I] += Current->toString() + "<->";
+        while(Current != nullptr){
+            Levels[I] += to_string(Current->Data) + ", ";
             Current = Current->Next;
-        } Levels[I] += Current->toString();
+        }
     }
 
 }
@@ -176,5 +177,12 @@ bool SkipList::remove(int Data) { return false; }
 
 // T/F: The SkipList contains given Data value.
 bool SkipList::contains(int Data) {
-  return false;
+    SNode* Current = findNext(FrontGuards[Depth - 1], Data);
+    for (int I = Depth - 1; I > 0; I--){
+        if (Current->Data == Data){
+            return true;
+        }
+        Current = findNext(Current->DownLevel, Data);
+    }
+  return Current->Data == Data;
 }
