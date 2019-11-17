@@ -217,7 +217,13 @@ void SkipList::stringsByLvl(string* Levels) const{
 
 // Delete memory on Heap
 SkipList::~SkipList() {
-  // need to delete individual nodes
+  clear();
+  for (int Level = Depth - 1; Level >= 0; Level--){
+      delete FrontGuards[Level];
+      delete RearGuards [Level];
+  }
+  delete[] FrontGuards;
+  delete[] RearGuards;
 }
 
 // Remove a value from the SkipList. True if successful.
