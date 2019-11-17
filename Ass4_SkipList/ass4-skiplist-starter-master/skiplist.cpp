@@ -61,6 +61,9 @@ bool SkipList::add(int Data) {
     int CurrLevel = Depth - 1;
     SNode* Current = FrontGuards[CurrLevel];
     SNode* CoinTossNexts[Depth];
+    SNode* NextNode = nullptr;
+
+    // clang-tidy warns that Array elts may not be initialized.
     for (int Level = 0; Level < Depth; Level++){
         CoinTossNexts[Level] = nullptr;
     }
@@ -83,7 +86,10 @@ bool SkipList::add(int Data) {
         for (int I = 1; I < Depth; I++){
             if (alsoHigher()){
                 ToAdd = duplicateAbove(ToAdd);
-                addBefore(ToAdd, CoinTossNexts[I]); //not init?
+
+                // Clang-tidy claims CoinTossNexts[I] is not init
+                NextNode = CoinTossNexts[I];
+                addBefore(ToAdd, NextNode); //not init?
             } else {
                 CanAdd = true;
                 return CanAdd;
