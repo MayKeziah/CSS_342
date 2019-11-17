@@ -82,8 +82,8 @@ private:
   // removes the given node and all nodes below.
   void removeColumn(SNode* Top);
 
-  // Safely sets the depth of the SkipList. True if successful.
-  bool setDepth(int Depth);
+  // True if given depth is greater than 0.
+  bool canSetDepth(int Depth);
 
   // Creates array of Guard pointers and fills them with MIN and MAX SNodes.
   void setGuards();

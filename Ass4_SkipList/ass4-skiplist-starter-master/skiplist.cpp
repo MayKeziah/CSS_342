@@ -24,7 +24,7 @@ ostream &operator<<(ostream &Out, const SkipList &SkipL) {
 
 // Explicit constructor. Data is the value to store in the SNode
 SkipList::SNode::SNode(int Data): Data{Data},
-Prev{nullptr}, Next{nullptr}, UpLevel{nullptr}, DownLevel {nullptr}{}
+Next{nullptr}, Prev{nullptr}, UpLevel{nullptr}, DownLevel {nullptr}{}
 
 //// is this duplicated above?
 //bool SkipList::SNode::isAbove() const{
@@ -50,12 +50,16 @@ string SkipList::SNode::toString() const {
 // Explicit Constructor. Depth is the number of levels in list. Default = 1.
 // Throws Invalid Argument Exception for Depths less than 1.
 SkipList::SkipList(int Depth) {
-    if (setDepth(Depth)){
+    if (canSetDepth(Depth)){
+        this->Depth = Depth;
+        FrontGuards = new SNode*[Depth];
+        RearGuards  = new SNode*[Depth];
         setGuards();
     } else{
-        throw new invalid_argument(
-                "SkipList Constructor: "
-                "SkipList must have one or more levels.");
+//        cerr << "SkipList Constructor: "
+//                "SkipList must have one or more levels.";
+        __throw_invalid_argument("SkipList Constructor: "
+                                 "SkipList must have one or more levels.");
     }
 }
 
@@ -165,10 +169,9 @@ void SkipList::removeColumn(SNode* Top){
 
 }
 
-// Safely sets the depth of the SkipList. True if successful.
-bool SkipList::setDepth(int Depth){
+// True if given depth is greater than 0.
+bool SkipList::canSetDepth(int Depth){
     if(Depth > 0){
-        this->Depth = Depth;
         return true;
     }
     return false;
@@ -176,8 +179,6 @@ bool SkipList::setDepth(int Depth){
 
 // Creates array of Guard pointers and fills them with MIN and MAX SNodes.
 void SkipList::setGuards(){
-    FrontGuards = new SNode*[Depth];
-    RearGuards  = new SNode*[Depth];
     FrontGuards[0] = new SNode(INT_MIN);
     RearGuards [0] = new SNode(INT_MAX);
     for (int I = 0; I < Depth - 1; I++){

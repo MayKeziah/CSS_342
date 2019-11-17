@@ -5,7 +5,6 @@
 #include "skiplist.h"
 #include <iostream>
 #include <sstream>
-#include <cassert>
 
 using namespace std;
 
@@ -17,10 +16,9 @@ template <typename T> string isOK(const T &got, const T &expected) {
   if (got == expected) {
     ++TotalPassed;
     return "OK: ";
-  } else {
-    cout << "    Got   " << got << "\n expected " << expected << endl;
-    return "ERR: ";
   }
+  cout << "    Got   " << got << "\n expected " << expected << endl;
+  return "ERR: ";
 }
 
 void test02() {
@@ -31,7 +29,7 @@ void test02() {
                              "Level: 1 -- -2147483648, 2147483647, \n"s +
                              "Level: 0 -- -2147483648, 2147483647, \n"s)
        << "Empty SkipList of Depth=3" << endl;
-  srand(100);
+  srand(100); // TODO ask about rand scope
   Skip.add(10);
   Skip.add(30);
   Skip.add(5);
@@ -76,29 +74,35 @@ int main() {
 //  cout << "Passed: " << TotalPassed << "/" << TotalTests << endl;
 
     cout << "Testing Constructor and <<..." << endl;
-    SkipList Test(1);
-    cout << Test << endl;
-    Test.add(12);
-    Test.add(20);
-    cout << Test << endl;
-//    Test.clear();
-    cout << Test << endl;
-
-
-    SkipList Test2(5);
-    for (int N = 0; N < 100; N++){
-        Test2.add(rand() % 100);
-
-    }
-    cout << "\n" << Test2 << endl;
-    Test2.remove(9);
-    cout << "\n" << Test2 << endl;
-    cout << Test2.contains(9) << endl;
-
-//    Test2.clear();
-    cout << "\n" << Test2 << endl;
+//    try{
+//        SkipList Test0(0);
+//    } catch (invalid_argument e){
+//        cerr << e.what() << endl;
+//    }
+//    SkipList Test(1);
+//    cout << Test << endl;
+//    Test.add(12);
+//    Test.add(20);
+//    cout << Test << endl;
+////    Test.clear();
+//    cout << Test << endl;
+//
+//
+//    SkipList Test2(5);
+//    for (int N = 0; N < 100; N++){
+//        Test2.add(rand() % 100);
+//
+//    }
+//    cout << "\n" << Test2 << endl;
+//    Test2.remove(9);
+//    cout << "\n" << Test2 << endl;
+//    cout << Test2.contains(9) << endl;
+//
+////    Test2.clear();
+//    cout << "\n" << Test2 << endl;
 
 
     cout << "...all testing passed!" << endl;
+    cout << std::flush;
   return 0;
 }
