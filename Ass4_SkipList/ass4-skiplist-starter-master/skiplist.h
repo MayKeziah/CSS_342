@@ -41,12 +41,12 @@ private:
     SNode *UpLevel;
     // link to down one level
     SNode *DownLevel;
-
-    // is this duplicated above?
-    bool isAbove() const;
-
-    // is this duplicated below?
-    bool isBelow() const;
+// TODO: Consider removing
+//    // is this duplicated above?
+//    bool isAbove() const;
+//
+//    // is this duplicated below?
+//    bool isBelow() const;
 
     // Convert SNode to string for output
     string toString() const;
