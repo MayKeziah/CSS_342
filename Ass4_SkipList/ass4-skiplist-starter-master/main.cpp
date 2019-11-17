@@ -89,15 +89,17 @@ int main() {
     Test2.add(13);
     Test2.add(1);
 
-    cout << Test2.add(12);
+
     cout << Test2.contains(12);
     cout << Test2.contains(20);
     cout << Test2.contains(13);
     cout << Test2.contains(14);
     cout << Test2.contains(1) << endl;
-
-
     cout << "\n" << Test2 << endl;
+
+    Test2.remove(1);
+    cout << "\n" << Test2 << endl;
+
     cout << "...all testing passed!" << endl;
   return 0;
 }

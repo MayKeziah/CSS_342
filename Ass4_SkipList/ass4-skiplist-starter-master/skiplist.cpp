@@ -13,7 +13,8 @@ using namespace std;
 // Insert a representation of this Skiplst into an ostream
 ostream &operator<<(ostream &Out, const SkipList &SkipL) {
     auto* Levels = new string[SkipL.Depth];
-    SkipL.strings(Levels);
+//    SkipL.strings(Levels);
+    SkipL.stringsByLvl(Levels);
     for (int I = SkipL.Depth - 1; I > -1 ; I--) {
         Out << Levels[I] << endl;
     }
@@ -132,6 +133,7 @@ void SkipList::removeColumn(SNode* Top){
         Current->Next->Prev = Current->Prev;
         delete Current;
         Current = Tmp;
+        if ()
         Tmp = Tmp->DownLevel;
     }
 
@@ -177,8 +179,8 @@ void SkipList::strings(string* Levels) const{
 // to a string and stores it in the associated string array index.
 void SkipList::stringsByLvl(string* Levels) const{
     for (int I = 0; I < Depth; I++){
-        Levels[I] += "L" + to_string(I) + ":\t";
         SNode* Current = FrontGuards[I];
+        Levels[I].insert(0, "L" + to_string(I) + ":\t");
         while(Current != RearGuards[I]){
             Levels[I] += Current->toString() + "<->";
             Current = Current->Next;
