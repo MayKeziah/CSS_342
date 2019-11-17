@@ -121,7 +121,7 @@ SkipList::SNode* SkipList::findNext(SNode* Start, int Data){
 }
 
 // removes the given node and all nodes below.
-void SkipList::removeColumn(SNode* Top, int Data){
+void SkipList::removeColumn(SNode* Top){
     SNode* Current = Top;
     SNode* Tmp = Current->DownLevel;
     while(Current != nullptr){
@@ -194,7 +194,7 @@ bool SkipList::remove(int Data) {
     SNode* Current= findNext(FrontGuards[Depth - 1], Data);
     for (int I = Depth - 1; I > 0; I++){
         if(Current->Data == Data){
-
+            removeColumn(Current)
         }
     }
     return false;
