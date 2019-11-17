@@ -73,27 +73,23 @@ int main() {
 //  test02();
 //  cout << "Passed: " << TotalPassed << "/" << TotalTests << endl;
 
-    cout << "Testing Constructor and <<..." << endl;
-//    try{
-//        SkipList Test0(0);
-//    } catch (invalid_argument e){
-//        cerr << e.what() << endl;
-//    }
-//    SkipList Test(1);
-//    cout << Test << endl;
-//    Test.add(12);
-//    Test.add(20);
-//    cout << Test << endl;
+    cout << "Testing add ..." << endl;
+
+    SkipList Test(1);
+    cout << Test << endl;
+    Test.add(12);
+    Test.add(20);
+    cout << Test << endl;
 ////    Test.clear();
 //    cout << Test << endl;
 //
 //
-//    SkipList Test2(5);
-//    for (int N = 0; N < 100; N++){
-//        Test2.add(rand() % 100);
-//
-//    }
-//    cout << "\n" << Test2 << endl;
+    SkipList Test2(5);
+    for (int N = 0; N < 100; N++){
+        Test2.add(rand() % 100);
+
+    }
+    cout << "\n" << Test2 << endl;
 //    Test2.remove(9);
 //    cout << "\n" << Test2 << endl;
 //    cout << Test2.contains(9) << endl;

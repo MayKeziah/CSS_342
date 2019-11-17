@@ -93,11 +93,9 @@ bool SkipList::add(int Data) {
                 return true;
             }
         }
+        delete[] ToAdd;
         return true;
-
     }
-
-  return true;
 }
 
 // Add the NewNode into the position before NextNode (Horizontally).
