@@ -79,6 +79,9 @@ private:
   //finds the next SNode if the data were added to this level
   SNode* findNext(SNode* Start, int Data);
 
+  // removes the given node and all nodes below.
+  void removeColumn(SNode*, int Data);
+
   // Safely sets the depth of the SkipList. True if successful.
   bool setDepth(int Depth);
 
