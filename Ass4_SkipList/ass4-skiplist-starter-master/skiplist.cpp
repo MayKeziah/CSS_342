@@ -34,7 +34,7 @@ Prev{nullptr}, Next{nullptr}, UpLevel{nullptr}, DownLevel {nullptr}{}
 //// is this duplicated below?
 //bool SkipList::SNode::isBelow() const{
 //    return DownLevel != nullptr;
-}
+//}
 
 // Convert SNode to string for visual degugging output
 string SkipList::SNode::toString() const {

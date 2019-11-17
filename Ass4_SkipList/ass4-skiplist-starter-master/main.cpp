@@ -99,6 +99,10 @@ int main() {
 
     Test2.remove(1);
     cout << "\n" << Test2 << endl;
+    Test2.add(1);
+    cout << "\n" << Test2 << endl;
+    Test2.remove(20);
+    cout << "\n" << Test2 << endl;
 
     cout << "...all testing passed!" << endl;
   return 0;
