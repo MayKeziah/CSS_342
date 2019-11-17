@@ -81,35 +81,19 @@ int main() {
     Test.add(12);
     Test.add(20);
     cout << Test << endl;
+    Test.remove(20);
+    cout << Test << endl;
 
 
     SkipList Test2(5);
-    Test2.add(12);
-    Test2.add(20);
-    Test2.add(13);
-    Test2.add(1);
+    for (int N = 0; N < 100; N++){
+        Test2.add(rand() % 100);
 
-
-    cout << Test2.contains(12);
-    cout << Test2.contains(20);
-    cout << Test2.contains(13);
-    cout << Test2.contains(14);
-    cout << Test2.contains(1) << endl;
+    }
     cout << "\n" << Test2 << endl;
-
-    Test2.remove(1);
+    Test2.remove(9);
     cout << "\n" << Test2 << endl;
-    Test2.add(1);
-    cout << "\n" << Test2 << endl;
-    Test2.remove(20);
-    cout << "\n" << Test2 << endl;
-    Test2.add(20);
-    cout << "\n" << Test2 << endl;
-    Test2.remove(13);
-    cout << "\n" << Test2 << endl;
-    Test2.remove(12);
-    cout << "\n" << Test2 << endl;
-
+    cout << Test2.contains(9) << endl;
 
     cout << "...all testing passed!" << endl;
   return 0;
