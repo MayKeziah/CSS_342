@@ -122,7 +122,16 @@ SkipList::SNode* SkipList::findNext(SNode* Start, int Data){
 
 // removes the given node and all nodes below.
 void SkipList::removeColumn(SNode* Top, int Data){
-    SNode* tmp = Top;
+    SNode* Current = Top;
+    SNode* Tmp = Current->DownLevel;
+    while(Current != nullptr){
+        Current->Prev->Next = Current->Next;
+        Current->Next->Prev = Current->Prev;
+        delete Current;
+        Current = Tmp;
+        Tmp = Tmp->DownLevel;
+    }
+
 }
 
 // Safely sets the depth of the SkipList. True if successful.
