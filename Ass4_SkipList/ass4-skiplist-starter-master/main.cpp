@@ -81,7 +81,7 @@ int main() {
     Test.add(12);
     Test.add(20);
     cout << Test << endl;
-    Test.remove(20);
+    Test.clear();
     cout << Test << endl;
 
 
@@ -94,6 +94,10 @@ int main() {
     Test2.remove(9);
     cout << "\n" << Test2 << endl;
     cout << Test2.contains(9) << endl;
+
+    Test2.clear();
+    cout << "\n" << Test2 << endl;
+
 
     cout << "...all testing passed!" << endl;
   return 0;
