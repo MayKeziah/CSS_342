@@ -42,15 +42,12 @@ private:
     // link to down one level
     SNode *DownLevel;
 
-//    // display SNode
-//    friend ostream &operator<<(ostream &Out, SNode &N) {
-//        if (N.Data == INT_MIN || N.Data == INT_MAX){
-//            Out << "|";
-//        } else{
-//            Out << "(" << N.Data << ")";
-//        }
-//        return Out;
-//    }
+    // is this duplicated above?
+    bool isAbove() const;
+
+    // is this duplicated below?
+    bool isBelow() const;
+
     // Convert SNode to string for output
     string toString() const;
   };
@@ -78,12 +75,6 @@ private:
 
   //finds the next SNode if the data were added to this level
   SNode* findNext(SNode* Start, int Data);
-
-  // is this duplicated above?
-  bool isAbove(SNode*);
-
-  // is this duplicated below?
-  bool isBelow(SNode*);
 
   // removes the given node and all nodes below.
   void removeColumn(SNode* Top);
