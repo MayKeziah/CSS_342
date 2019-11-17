@@ -29,7 +29,7 @@ void test02() {
                              "Level: 1 -- -2147483648, 2147483647, \n"s +
                              "Level: 0 -- -2147483648, 2147483647, \n"s)
        << "Empty SkipList of Depth=3" << endl;
-  srand(100); // TODO ask about rand scope
+  srand(100); //  ask about rand scope
   Skip.add(10);
   Skip.add(30);
   Skip.add(5);

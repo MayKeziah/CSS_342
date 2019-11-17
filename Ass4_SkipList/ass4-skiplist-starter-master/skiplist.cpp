@@ -61,6 +61,9 @@ bool SkipList::add(int Data) {
     int CurrLevel = Depth - 1;
     SNode* Current = FrontGuards[CurrLevel];
     SNode* CoinTossNexts[Depth];
+    for (auto* Elt: CoinTossNexts){
+        Elt = nullptr;
+    }
     bool CanAdd = false;
     for (int I = Depth - 1; I > 0; I--){
         CoinTossNexts[I] = findNext(Current, Data);
@@ -80,7 +83,7 @@ bool SkipList::add(int Data) {
         for (int I = 1; I < Depth; I++){
             if (alsoHigher()){
                 ToAdd = duplicateAbove(ToAdd);
-                addBefore(ToAdd, CoinTossNexts[I]);;
+                addBefore(ToAdd, CoinTossNexts[I]); //not init?
             } else {
                 CanAdd = true;
                 return CanAdd;
@@ -162,10 +165,7 @@ void SkipList::removeColumn(SNode* Top){
 
 // True if given depth is greater than 0.
 bool SkipList::canSetDepth(int Depth){
-    if(Depth > 0){
-        return true;
-    }
-    return false;
+    return Depth > 0;
 }
 
 // Creates array of Guard pointers and fills them with MIN and MAX SNodes.
