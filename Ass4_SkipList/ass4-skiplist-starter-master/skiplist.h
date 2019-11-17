@@ -70,8 +70,8 @@ private:
   // each node has a 50% chance of being at higher level
   bool alsoHigher() const;
 
-//  // removes all added SNodes, leaving only the front and rear guards.
-//  void clear();
+  // removes all added SNodes, leaving only the front and rear guards.
+  void clear();
 
   // Duplicate this node in higher level
   SNode* duplicateAbove(SNode* OrigNode);
@@ -109,8 +109,6 @@ public:
   // return true if successfully removed
   bool remove(int Data);
 
-    // removes all added SNodes, leaving only the front and rear guards.
-    void clear();
 
   // return true if found in SkipList
   bool contains(int Data);

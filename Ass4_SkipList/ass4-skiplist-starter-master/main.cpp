@@ -81,7 +81,7 @@ int main() {
     Test.add(12);
     Test.add(20);
     cout << Test << endl;
-    Test.clear();
+//    Test.clear();
     cout << Test << endl;
 
 
@@ -95,7 +95,7 @@ int main() {
     cout << "\n" << Test2 << endl;
     cout << Test2.contains(9) << endl;
 
-    Test2.clear();
+//    Test2.clear();
     cout << "\n" << Test2 << endl;
 
 
