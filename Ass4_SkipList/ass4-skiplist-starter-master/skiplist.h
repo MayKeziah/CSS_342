@@ -87,6 +87,10 @@ private:
 
   // given a string array with matching depth, converts each level
   // to a string and stores it in the associated string array index.
+  void strings(string* Levels) const;
+
+  // given a string array with matching depth, converts each level
+  // to a visual string and stores it in the associated string array index.
   void stringsByLvl(string* Levels) const;
 
 public:

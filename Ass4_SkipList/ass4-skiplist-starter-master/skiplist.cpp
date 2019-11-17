@@ -49,7 +49,7 @@ SkipList::SkipList(int Depth) {
 }
 
 // T/F: The value of this SNode is to be duplicated up one level.
-bool SkipList::alsoHigher() const { return true; }
+bool SkipList::alsoHigher() const { return (rand() % 2) == 1; }
 
 // Add a new value to the SkipList. No duplicates. True if successful.
 bool SkipList::add(int Data) { //TODO
@@ -68,11 +68,11 @@ bool SkipList::add(int Data) { //TODO
         SNode* ToAdd = new SNode(Data);
         addBefore(ToAdd, CoinTossNexts[0]);
         for (int I = 1; I < Depth; I++){
-            if ((rand() % 2) == 1){
-                return true;
-            } else {
+            if (alsoHigher()){
                 ToAdd = duplicateAbove(ToAdd);
-                addBefore(ToAdd, CoinTossNexts[I]);
+                addBefore(ToAdd, CoinTossNexts[I]);;
+            } else {
+                return true;
             }
         }
         return true;
@@ -136,6 +136,20 @@ void SkipList::setGuards(){
         FrontGuards[I + 1] = duplicateAbove(FrontGuards[I]);
         RearGuards [I + 1] = duplicateAbove(RearGuards [I]);
     }   addBefore(FrontGuards[Depth - 1], RearGuards[Depth - 1]);
+}
+
+// given a string array with matching depth, converts each level
+// to a string and stores it in the associated string array index.
+void SkipList::strings(string* Levels) const{
+    for (int I = 0; I < Depth; I++){
+        Levels[I] += "Level: " + to_string(I) + ": -- ";
+        SNode* Current = FrontGuards[I];
+        while(Current != RearGuards[I]){
+            Levels[I] += Current->toString() + "<->";
+            Current = Current->Next;
+        } Levels[I] += Current->toString();
+    }
+
 }
 
 // given a string array with matching depth, converts each level

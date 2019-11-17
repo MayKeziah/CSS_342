@@ -86,6 +86,10 @@ int main() {
     SkipList Test2(5);
     Test2.add(12);
     Test2.add(20);
+    Test2.add(13);
+    Test2.add(1);
+
+
     cout << "\n" << Test2 << endl;
     cout << "...all testing passed!" << endl;
   return 0;
