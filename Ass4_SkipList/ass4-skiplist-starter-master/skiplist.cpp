@@ -48,11 +48,20 @@ SkipList::SkipList(int Depth) {
     }
 }
 
-// T/F: The value of this SNode is also stored up one level.
-bool SkipList::alsoHigher() const { return false; }
+// T/F: The value of this SNode is to be duplicated up one level.
+bool SkipList::alsoHigher() const { return true; }
 
 // Add a new value to the SkipList. No duplicates. True if successful.
 bool SkipList::add(int Data) {
+    int CurrLevel = Depth - 1;
+    SNode* Current = FrontGuards[CurrLevel];
+    while (CurrLevel >= 0){
+        while (Data > Current->Data) {
+            Current = Current->Next;
+        }
+        Current = Current->DownLevel;
+        CurrLevel--;
+    }
   return true;
 }
 

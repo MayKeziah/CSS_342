@@ -78,8 +78,14 @@ int main() {
     cout << "Testing Constructor and <<..." << endl;
     SkipList Test(1);
     cout << Test << endl;
+    Test.add(12);
+    Test.add(20);
+    cout << Test << endl;
+
 
     SkipList Test2(5);
+    Test2.add(12);
+    Test2.add(20);
     cout << "\n" << Test2 << endl;
     cout << "...all testing passed!" << endl;
   return 0;
