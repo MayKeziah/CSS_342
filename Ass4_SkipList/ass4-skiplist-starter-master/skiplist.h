@@ -41,18 +41,12 @@ private:
     SNode *UpLevel;
     // link to down one level
     SNode *DownLevel;
-// TODO: Consider removing
-//    // is this duplicated above?
-//    bool isAbove() const;
-//
-//    // is this duplicated below?
-//    bool isBelow() const;
 
     // Convert SNode to string for output
     string toString() const;
   };
 
-  using Snode = struct Snode; //TODO understand purpose
+  using Snode = struct Snode;
 
   // Depth of SkipList
   int Depth;

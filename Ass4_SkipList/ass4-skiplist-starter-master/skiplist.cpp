@@ -26,16 +26,6 @@ ostream &operator<<(ostream &Out, const SkipList &SkipL) {
 SkipList::SNode::SNode(int Data): Data{Data},
 Next{nullptr}, Prev{nullptr}, UpLevel{nullptr}, DownLevel {nullptr}{}
 
-//// is this duplicated above?
-//bool SkipList::SNode::isAbove() const{
-//    return UpLevel != nullptr;
-//}
-//
-//// is this duplicated below?
-//bool SkipList::SNode::isBelow() const{
-//    return DownLevel != nullptr;
-//}
-
 // Convert SNode to string for visual degugging output
 string SkipList::SNode::toString() const {
     string Out;
