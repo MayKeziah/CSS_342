@@ -232,12 +232,12 @@ SkipList::~SkipList() {
 bool SkipList::remove(int Data) {
     SNode* Current= findNext(FrontGuards[Depth - 1], Data);
     for (int I = Depth - 1; I >= 0; I++){
-        if(Current->Data == Data){
-            removeColumn(Current);
-            return true;
+        if(Current->Data != Data){
+            Current = findNext(Current->DownLevel, Data);
         }
         else{
-            Current = findNext(Current->DownLevel, Data);
+            removeColumn(Current);
+            return true;
         }
     }
     return false;
