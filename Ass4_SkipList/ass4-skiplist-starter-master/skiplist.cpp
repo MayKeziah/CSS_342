@@ -75,7 +75,7 @@ bool SkipList::add(int Data) {
     for (int I = Depth - 1; I > 0; I--){
         CoinTossNexts[I] = findNext(Current, Data);
         if (CoinTossNexts[I]->Data == Data){
-            CanAdd = false;
+//            CanAdd = false;
             return CanAdd;
         }
         Current = CoinTossNexts[I]->DownLevel;
@@ -85,7 +85,7 @@ bool SkipList::add(int Data) {
         CanAdd = false;
     }
     else{
-        SNode* ToAdd = new SNode(Data);
+        auto* ToAdd = new SNode(Data);
         addBefore(ToAdd, CoinTossNexts[0]);
         for (int I = 1; I < Depth; I++){
             if (alsoHigher()){
