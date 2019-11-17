@@ -195,7 +195,7 @@ SkipList::~SkipList() {
 // Remove a value from the SkipList. True if successful.
 bool SkipList::remove(int Data) {
     SNode* Current= findNext(FrontGuards[Depth - 1], Data);
-    for (int I = Depth - 1; I > 0; I++){
+    for (int I = Depth - 1; I >= 0; I++){
         if(Current->Data == Data){
             removeColumn(Current);
             return true;
