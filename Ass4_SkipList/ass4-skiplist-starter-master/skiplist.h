@@ -80,7 +80,7 @@ private:
   SNode* findNext(SNode* Start, int Data);
 
   // removes the given node and all nodes below.
-  void removeColumn(SNode*, int Data);
+  void removeColumn(SNode* Top, int Data);
 
   // Safely sets the depth of the SkipList. True if successful.
   bool setDepth(int Depth);
