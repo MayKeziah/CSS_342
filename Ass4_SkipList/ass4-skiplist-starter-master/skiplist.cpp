@@ -110,6 +110,9 @@ SkipList::SNode* SkipList::duplicateAbove(SNode* OrigNode){
 // finds the next SNode if the data were added to this level
 // If this level contains Data, it returns that node.
 SkipList::SNode* SkipList::findNext(SNode* Start, int Data){
+    if (Start == nullptr){
+        return Start;
+    }
     SNode* Current = Start;
     while (Data < Current->Data){
         Current = Current->Prev;
@@ -194,7 +197,11 @@ bool SkipList::remove(int Data) {
     SNode* Current= findNext(FrontGuards[Depth - 1], Data);
     for (int I = Depth - 1; I > 0; I++){
         if(Current->Data == Data){
-            removeColumn(Current)
+            removeColumn(Current);
+            return true;
+        }
+        else{
+            Current = findNext(Current->DownLevel, Data);
         }
     }
     return false;
