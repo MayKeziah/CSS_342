@@ -52,16 +52,10 @@ SkipList::SkipList(int Depth) {
 bool SkipList::alsoHigher() const { return true; }
 
 // Add a new value to the SkipList. No duplicates. True if successful.
-bool SkipList::add(int Data) {
+bool SkipList::add(int Data) { //TODO
     int CurrLevel = Depth - 1;
     SNode* Current = FrontGuards[CurrLevel];
-    while (CurrLevel >= 0){
-        while (Data > Current->Data) {
-            Current = Current->Next;
-        }
-        Current = Current->DownLevel;
-        CurrLevel--;
-    }
+
   return true;
 }
 
@@ -85,6 +79,18 @@ SkipList::SNode* SkipList::duplicateAbove(SNode* OrigNode){
 //    SNode* NextNode = OrigNode->Next->UpLevel;
 //    addBefore(NewDuplicate, NextNode);
     return NewDuplicate;
+}
+
+//finds the next SNode if the data were added to this level
+SkipList::SNode* SkipList::findNext(SNode* Start, int Data){
+    SNode* Current = Start;
+    while (Data < Current->Data){
+        Current = Current->Prev;
+    }
+    while (Data > Current->Data){
+        Current = Current->Next;
+    }
+    return Current;
 }
 
 // Safely sets the depth of the SkipList. True if successful.

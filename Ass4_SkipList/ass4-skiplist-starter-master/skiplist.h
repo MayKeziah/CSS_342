@@ -76,6 +76,9 @@ private:
   // Duplicate this node in higher level
   SNode* duplicateAbove(SNode* OrigNode);
 
+  //finds the next SNode if the data were added to this level
+  SNode* findNext(SNode* Start, int Data);
+
   // Safely sets the depth of the SkipList. True if successful.
   bool setDepth(int Depth);
 
