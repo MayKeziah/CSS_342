@@ -20,7 +20,48 @@ template <typename T> string isOK(const T &got, const T &expected) {
   cout << "    Got   " << got << "\n expected " << expected << endl;
   return "ERR: ";
 }
+void testRemove(SkipList& List, int Data){
+    if (List.contains(Data)){
+        cout << isOK(List.remove(Data), true);
+        cout << "Able to remove existing value.\n\t";
+        cout << isOK(List.contains(Data), false);
+        cout << "Value successfully removed ";
+    } else{
+        cout << isOK(List.remove(Data), false);
+        cout << "Can't remove a value that is not contained ";
+    }
+    cout << Data << endl;
+}
+void testAdd(SkipList& List){
+    srand(1);
+    int Values[10];
+    for (int I = 0; I < 10; I++) {
+        Values[I] = rand() % 100;
+    }
+    for (int Test = 9; Test >= 0; Test--){
+        List.add(Values[Test]);
+        cout << isOK(List.contains(Values[Test]), true);
+        cout << "List contains added value " << Values[Test] << endl;
+    }
+    for (int Data = 9; Data >= 0; Data--){
+        testRemove(List, Values[Data]);
+    }
+}
+void testConstructor(int Depth){
+    SkipList Empty(Depth);
+    stringstream SList;
+    stringstream SExpected;
+    SList << Empty;
+    for (int Level = Depth - 1; Level >= 0; Level--){
+        SExpected << "Level: " << Level << " -- -2147483648, 2147483647, \n";
+    }
+    cout << isOK(SList.str(), SExpected.str());
+    cout << "Empty List contains correct number of Guards." << endl;
 
+    // Test add for list of depth 1
+    testAdd(Empty);
+
+}
 void test02() {
   SkipList Skip(3);
   stringstream Ss;
@@ -29,8 +70,6 @@ void test02() {
                              "Level: 1 -- -2147483648, 2147483647, \n"s +
                              "Level: 0 -- -2147483648, 2147483647, \n"s)
        << "Empty SkipList of Depth=3" << endl;
-
-  //prev, success
 
   srand(100);
   Skip.add(10);
@@ -46,6 +85,7 @@ void test02() {
 //                   "Level: 0 -- -2147483648, 5, 10, 25, 30, 2147483647, \n"s)
 //       << "SkipList of Depth=3 with 10, 30, 5, 25" << endl;
 
+    // Test for linux computer csslab11.uwb.edu
     cout << isOK(Ss.str(),
                  "Level: 2 -- -2147483648, 30, 2147483647, \n"s +
                  "Level: 1 -- -2147483648, 30, 2147483647, \n"s +
@@ -81,13 +121,9 @@ int main() {
   srand(424242);
   test01();
   test02();
-
-  // testing binary values of rand seeded at 100 to edit test02()
-//    srand(100);
-//    for (int testNum = 1; testNum < 20; testNum++){
-//        cout << ((rand() % 2) == 1) << endl;
-//    }
-
+  for (int Depth = 1; Depth < 6; Depth++){
+      testConstructor(Depth);
+  }
   cout << "Passed: " << TotalPassed << "/" << TotalTests << endl;
   return 0;
 }
