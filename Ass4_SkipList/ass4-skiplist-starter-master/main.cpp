@@ -29,7 +29,10 @@ void test02() {
                              "Level: 1 -- -2147483648, 2147483647, \n"s +
                              "Level: 0 -- -2147483648, 2147483647, \n"s)
        << "Empty SkipList of Depth=3" << endl;
-  srand(100); //  ask about rand scope
+
+  //prev, success
+
+  srand(100);
   Skip.add(10);
   Skip.add(30);
   Skip.add(5);
@@ -37,8 +40,8 @@ void test02() {
   Ss.str("");
   Ss << Skip;
   cout << isOK(Ss.str(),
-               "Level: 2 -- -2147483648, 25, 2147483647, \n"s +
-                   "Level: 1 -- -2147483648, 5, 10, 25, 30, 2147483647, \n"s +
+               "Level: 2 -- -2147483648, 10, 30, 2147483647, \n"s +
+                   "Level: 1 -- -2147483648, 5, 10, 30, 2147483647, \n"s +
                    "Level: 0 -- -2147483648, 5, 10, 25, 30, 2147483647, \n"s)
        << "SkipList of Depth=3 with 10, 30, 5, 25" << endl;
   cout << isOK(Skip.contains(10), true) << "Contains 10" << endl;
@@ -64,41 +67,30 @@ void test01() {
 }
 
 int main() {
-//  cout << "Because of the random nature of SkipList, "
-//       << "the skip list levels may not match" << endl;
-//  // Set the random seed for easy debugging
-//  // NOLINTNEXTLINE
+  cout << "Because of the random nature of SkipList, "
+       << "the skip list levels may not match" << endl;
+  // Set the random seed for easy debugging
+  // NOLINTNEXTLINE
 //  srand(424242);
 //  test01();
 //  test02();
-//  cout << "Passed: " << TotalPassed << "/" << TotalTests << endl;
 
-    cout << "Testing add ..." << endl;
-
-    SkipList Test(1);
-    cout << Test << endl;
-    Test.add(12);
-    Test.add(20);
-    cout << Test << endl;
-////    Test.clear();
-//    cout << Test << endl;
-//
-//
+  // testing binary values of rand seeded at 100 to edit test02()
+//    srand(100);
+//    for (int testNum = 1; testNum < 20; testNum++){
+//        cout << ((rand() % 2) == 1) << endl;
+//    }
     SkipList Test2(5);
     for (int N = 0; N < 100; N++){
         Test2.add(rand() % 100);
 
     }
     cout << "\n" << Test2 << endl;
-    Test2.remove(9);
+    Test2.remove(5);
+    Test2.remove(31);
+
     cout << "\n" << Test2 << endl;
-//    cout << Test2.contains(9) << endl;
-//
-////    Test2.clear();
-//    cout << "\n" << Test2 << endl;
 
-
-    cout << "...all testing passed!" << endl;
-    cout << std::flush;
+  cout << "Passed: " << TotalPassed << "/" << TotalTests << endl;
   return 0;
 }

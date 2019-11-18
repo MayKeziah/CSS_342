@@ -13,8 +13,8 @@ using namespace std;
 // Insert a representation of this Skiplst into an ostream
 ostream &operator<<(ostream &Out, const SkipList &SkipL) {
     auto* Levels = new string[SkipL.Depth];
-//    SkipL.strings(Levels);
-    SkipL.stringsByLvl(Levels);
+    SkipL.strings(Levels);
+//    SkipL.stringsByLvl(Levels);
     for (int I = SkipL.Depth - 1; I > -1 ; I--) {
         Out << Levels[I] << endl;
     }
@@ -227,7 +227,7 @@ SkipList::~SkipList() {
 // Remove a value from the SkipList. True if successful.
 bool SkipList::remove(int Data) {
     SNode* Current= findNext(FrontGuards[Depth - 1], Data);
-    for (int I = Depth - 1; I >= 0; I++){
+    for (int I = Depth - 1; I >= 0; I--){
         if(Current->Data != Data){
             Current = findNext(Current->DownLevel, Data);
         }
