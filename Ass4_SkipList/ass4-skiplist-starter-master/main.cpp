@@ -71,25 +71,15 @@ int main() {
        << "the skip list levels may not match" << endl;
   // Set the random seed for easy debugging
   // NOLINTNEXTLINE
-//  srand(424242);
-//  test01();
-//  test02();
+  srand(424242);
+  test01();
+  test02();
 
   // testing binary values of rand seeded at 100 to edit test02()
 //    srand(100);
 //    for (int testNum = 1; testNum < 20; testNum++){
 //        cout << ((rand() % 2) == 1) << endl;
 //    }
-    SkipList Test2(5);
-    for (int N = 0; N < 100; N++){
-        Test2.add(rand() % 100);
-
-    }
-    cout << "\n" << Test2 << endl;
-    Test2.remove(5);
-    Test2.remove(31);
-
-    cout << "\n" << Test2 << endl;
 
   cout << "Passed: " << TotalPassed << "/" << TotalTests << endl;
   return 0;
