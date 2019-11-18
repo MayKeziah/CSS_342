@@ -1,0 +1,4 @@
+C:\Users\E\.CLion2019.2\system\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass4_SkipList/ass4-skiplist-starter-master
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass4_SkipList/ass4-skiplist-starter-master/cmake-build-debug

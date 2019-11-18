@@ -1,0 +1,422 @@
+Sun Nov 17 19:42:00 PST 2019
+*** compiling with clang++ to create an executable called myprogram
+clang version 7.0.1 (tags/RELEASE_701/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /opt/rh/llvm-toolset-7.0/root/usr/bin
+*** running clang-tidy using options from .clang-tidy
+LLVM (http://llvm.org/):
+  LLVM version 7.0.1
+  Optimized build.
+  Default target: x86_64-unknown-linux-gnu
+  Host CPU: broadwell
+6988 warnings generated.
+13628 warnings generated.
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:23:27: warning: non-const reference parameter 'List', make it const or use a pointer [google-runtime-references]
+void testRemove(SkipList& List, int Data){
+                          ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:35:24: warning: non-const reference parameter 'List', make it const or use a pointer [google-runtime-references]
+void testAdd(SkipList& List){
+                       ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:36:5: warning: random number generator seeded with a constant value will generate a predictable sequence of values [cert-msc32-c]
+    srand(1);
+    ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:38:5: warning: use range-based for loop instead [modernize-loop-convert]
+    for (int I = 0; I < 10; I++) {
+    ^   ~~~~~~~~~~~~~~~~~~~~~~~~
+        (int & Value : Values)
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:39:9: warning: do not use array subscript when the index is not an integer constant expression; use gsl::at() instead [cppcoreguidelines-pro-bounds-constant-array-index]
+        Values[I] = rand() % 100;
+        ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:39:21: warning: rand() has limited randomness; use C++11 random library instead [cert-msc30-c]
+        Values[I] = rand() % 100;
+                    ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:42:18: warning: do not use array subscript when the index is not an integer constant expression; use gsl::at() instead [cppcoreguidelines-pro-bounds-constant-array-index]
+        List.add(Values[Test]);
+                 ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:43:36: warning: do not use array subscript when the index is not an integer constant expression; use gsl::at() instead [cppcoreguidelines-pro-bounds-constant-array-index]
+        cout << isOK(List.contains(Values[Test]), true);
+                                   ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:44:49: warning: do not use array subscript when the index is not an integer constant expression; use gsl::at() instead [cppcoreguidelines-pro-bounds-constant-array-index]
+        cout << "List contains added value " << Values[Test] << endl;
+                                                ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:47:26: warning: do not use array subscript when the index is not an integer constant expression; use gsl::at() instead [cppcoreguidelines-pro-bounds-constant-array-index]
+        testRemove(List, Values[Data]);
+                         ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:74:3: warning: random number generator seeded with a constant value will generate a predictable sequence of values [cert-msc32-c]
+  srand(100);
+  ^
+/home/NETID/kezm/ass4-skiplist-starter-master/skiplist.cpp:57:45: warning: rand() has limited randomness; use C++11 random library instead [cert-msc30-c]
+bool SkipList::alsoHigher() const { return (rand() % 2) == 1; }
+                                            ^
+/home/NETID/kezm/ass4-skiplist-starter-master/skiplist.cpp:91:26: warning: Assigned value is garbage or undefined [clang-analyzer-core.uninitialized.Assign]
+                NextNode = CoinTossNexts[I];
+                         ^
+/home/NETID/kezm/ass4-skiplist-starter-master/skiplist.cpp:67:5: note: Loop condition is true.  Entering loop body
+    for (int Level = 0; Level < Depth; Level++){
+    ^
+/home/NETID/kezm/ass4-skiplist-starter-master/skiplist.cpp:67:25: note: Assuming the condition is false
+    for (int Level = 0; Level < Depth; Level++){
+                        ^
+/home/NETID/kezm/ass4-skiplist-starter-master/skiplist.cpp:67:5: note: Loop condition is false. Execution continues on line 70
+    for (int Level = 0; Level < Depth; Level++){
+    ^
+/home/NETID/kezm/ass4-skiplist-starter-master/skiplist.cpp:71:5: note: Loop condition is false. Execution continues on line 79
+    for (int I = Depth - 1; I > 0; I--){
+    ^
+/home/NETID/kezm/ass4-skiplist-starter-master/skiplist.cpp:80:9: note: Assuming the condition is false
+    if (CoinTossNexts[0]->Data == Data){
+        ^
+/home/NETID/kezm/ass4-skiplist-starter-master/skiplist.cpp:80:5: note: Taking false branch
+    if (CoinTossNexts[0]->Data == Data){
+    ^
+/home/NETID/kezm/ass4-skiplist-starter-master/skiplist.cpp:86:25: note: Assuming the condition is true
+        for (int I = 1; I < Depth; I++){
+                        ^
+/home/NETID/kezm/ass4-skiplist-starter-master/skiplist.cpp:86:9: note: Loop condition is true.  Entering loop body
+        for (int I = 1; I < Depth; I++){
+        ^
+/home/NETID/kezm/ass4-skiplist-starter-master/skiplist.cpp:87:13: note: Taking true branch
+            if (alsoHigher()){
+            ^
+/home/NETID/kezm/ass4-skiplist-starter-master/skiplist.cpp:91:26: note: Assigned value is garbage or undefined
+                NextNode = CoinTossNexts[I];
+                         ^
+Suppressed 13613 warnings (13611 in non-user code, 2 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+*** running myprogram
+Because of the random nature of SkipList, the skip list levels may not match
+OK: Empty SkipList
+OK: Added 10, 30, 5, 25,
+OK: Empty SkipList of Depth=3
+OK: SkipList of Depth=3 with 10, 30, 5, 25
+OK: Contains 10
+OK: Contains 30
+OK: Does not contain 71
+OK: Empty List contains correct number of Guards.
+OK: List contains added value 21
+OK: List contains added value 49
+OK: List contains added value 92
+OK: List contains added value 86
+OK: List contains added value 35
+OK: List contains added value 93
+OK: List contains added value 15
+OK: List contains added value 77
+OK: List contains added value 86
+OK: List contains added value 83
+OK: Able to remove existing value.
+	OK: Value successfully removed 21
+OK: Able to remove existing value.
+	OK: Value successfully removed 49
+OK: Able to remove existing value.
+	OK: Value successfully removed 92
+OK: Able to remove existing value.
+	OK: Value successfully removed 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 35
+OK: Able to remove existing value.
+	OK: Value successfully removed 93
+OK: Able to remove existing value.
+	OK: Value successfully removed 15
+OK: Able to remove existing value.
+	OK: Value successfully removed 77
+OK: Can't remove a value that is not contained 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 83
+OK: Empty List contains correct number of Guards.
+OK: List contains added value 21
+OK: List contains added value 49
+OK: List contains added value 92
+OK: List contains added value 86
+OK: List contains added value 35
+OK: List contains added value 93
+OK: List contains added value 15
+OK: List contains added value 77
+OK: List contains added value 86
+OK: List contains added value 83
+OK: Able to remove existing value.
+	OK: Value successfully removed 21
+OK: Able to remove existing value.
+	OK: Value successfully removed 49
+OK: Able to remove existing value.
+	OK: Value successfully removed 92
+OK: Able to remove existing value.
+	OK: Value successfully removed 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 35
+OK: Able to remove existing value.
+	OK: Value successfully removed 93
+OK: Able to remove existing value.
+	OK: Value successfully removed 15
+OK: Able to remove existing value.
+	OK: Value successfully removed 77
+OK: Can't remove a value that is not contained 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 83
+OK: Empty List contains correct number of Guards.
+OK: List contains added value 21
+OK: List contains added value 49
+OK: List contains added value 92
+OK: List contains added value 86
+OK: List contains added value 35
+OK: List contains added value 93
+OK: List contains added value 15
+OK: List contains added value 77
+OK: List contains added value 86
+OK: List contains added value 83
+OK: Able to remove existing value.
+	OK: Value successfully removed 21
+OK: Able to remove existing value.
+	OK: Value successfully removed 49
+OK: Able to remove existing value.
+	OK: Value successfully removed 92
+OK: Able to remove existing value.
+	OK: Value successfully removed 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 35
+OK: Able to remove existing value.
+	OK: Value successfully removed 93
+OK: Able to remove existing value.
+	OK: Value successfully removed 15
+OK: Able to remove existing value.
+	OK: Value successfully removed 77
+OK: Can't remove a value that is not contained 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 83
+OK: Empty List contains correct number of Guards.
+OK: List contains added value 21
+OK: List contains added value 49
+OK: List contains added value 92
+OK: List contains added value 86
+OK: List contains added value 35
+OK: List contains added value 93
+OK: List contains added value 15
+OK: List contains added value 77
+OK: List contains added value 86
+OK: List contains added value 83
+OK: Able to remove existing value.
+	OK: Value successfully removed 21
+OK: Able to remove existing value.
+	OK: Value successfully removed 49
+OK: Able to remove existing value.
+	OK: Value successfully removed 92
+OK: Able to remove existing value.
+	OK: Value successfully removed 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 35
+OK: Able to remove existing value.
+	OK: Value successfully removed 93
+OK: Able to remove existing value.
+	OK: Value successfully removed 15
+OK: Able to remove existing value.
+	OK: Value successfully removed 77
+OK: Can't remove a value that is not contained 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 83
+OK: Empty List contains correct number of Guards.
+OK: List contains added value 21
+OK: List contains added value 49
+OK: List contains added value 92
+OK: List contains added value 86
+OK: List contains added value 35
+OK: List contains added value 93
+OK: List contains added value 15
+OK: List contains added value 77
+OK: List contains added value 86
+OK: List contains added value 83
+OK: Able to remove existing value.
+	OK: Value successfully removed 21
+OK: Able to remove existing value.
+	OK: Value successfully removed 49
+OK: Able to remove existing value.
+	OK: Value successfully removed 92
+OK: Able to remove existing value.
+	OK: Value successfully removed 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 35
+OK: Able to remove existing value.
+	OK: Value successfully removed 93
+OK: Able to remove existing value.
+	OK: Value successfully removed 15
+OK: Able to remove existing value.
+	OK: Value successfully removed 77
+OK: Can't remove a value that is not contained 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 83
+Passed: 157/157
+*** running with valgrind
+==14497== Memcheck, a memory error detector
+==14497== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==14497== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==14497== Command: ./myprogram
+==14497== 
+Because of the random nature of SkipList, the skip list levels may not match
+OK: Empty SkipList
+OK: Added 10, 30, 5, 25,
+OK: Empty SkipList of Depth=3
+OK: SkipList of Depth=3 with 10, 30, 5, 25
+OK: Contains 10
+OK: Contains 30
+OK: Does not contain 71
+OK: Empty List contains correct number of Guards.
+OK: List contains added value 21
+OK: List contains added value 49
+OK: List contains added value 92
+OK: List contains added value 86
+OK: List contains added value 35
+OK: List contains added value 93
+OK: List contains added value 15
+OK: List contains added value 77
+OK: List contains added value 86
+OK: List contains added value 83
+OK: Able to remove existing value.
+	OK: Value successfully removed 21
+OK: Able to remove existing value.
+	OK: Value successfully removed 49
+OK: Able to remove existing value.
+	OK: Value successfully removed 92
+OK: Able to remove existing value.
+	OK: Value successfully removed 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 35
+OK: Able to remove existing value.
+	OK: Value successfully removed 93
+OK: Able to remove existing value.
+	OK: Value successfully removed 15
+OK: Able to remove existing value.
+	OK: Value successfully removed 77
+OK: Can't remove a value that is not contained 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 83
+OK: Empty List contains correct number of Guards.
+OK: List contains added value 21
+OK: List contains added value 49
+OK: List contains added value 92
+OK: List contains added value 86
+OK: List contains added value 35
+OK: List contains added value 93
+OK: List contains added value 15
+OK: List contains added value 77
+OK: List contains added value 86
+OK: List contains added value 83
+OK: Able to remove existing value.
+	OK: Value successfully removed 21
+OK: Able to remove existing value.
+	OK: Value successfully removed 49
+OK: Able to remove existing value.
+	OK: Value successfully removed 92
+OK: Able to remove existing value.
+	OK: Value successfully removed 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 35
+OK: Able to remove existing value.
+	OK: Value successfully removed 93
+OK: Able to remove existing value.
+	OK: Value successfully removed 15
+OK: Able to remove existing value.
+	OK: Value successfully removed 77
+OK: Can't remove a value that is not contained 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 83
+OK: Empty List contains correct number of Guards.
+OK: List contains added value 21
+OK: List contains added value 49
+OK: List contains added value 92
+OK: List contains added value 86
+OK: List contains added value 35
+OK: List contains added value 93
+OK: List contains added value 15
+OK: List contains added value 77
+OK: List contains added value 86
+OK: List contains added value 83
+OK: Able to remove existing value.
+	OK: Value successfully removed 21
+OK: Able to remove existing value.
+	OK: Value successfully removed 49
+OK: Able to remove existing value.
+	OK: Value successfully removed 92
+OK: Able to remove existing value.
+	OK: Value successfully removed 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 35
+OK: Able to remove existing value.
+	OK: Value successfully removed 93
+OK: Able to remove existing value.
+	OK: Value successfully removed 15
+OK: Able to remove existing value.
+	OK: Value successfully removed 77
+OK: Can't remove a value that is not contained 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 83
+OK: Empty List contains correct number of Guards.
+OK: List contains added value 21
+OK: List contains added value 49
+OK: List contains added value 92
+OK: List contains added value 86
+OK: List contains added value 35
+OK: List contains added value 93
+OK: List contains added value 15
+OK: List contains added value 77
+OK: List contains added value 86
+OK: List contains added value 83
+OK: Able to remove existing value.
+	OK: Value successfully removed 21
+OK: Able to remove existing value.
+	OK: Value successfully removed 49
+OK: Able to remove existing value.
+	OK: Value successfully removed 92
+OK: Able to remove existing value.
+	OK: Value successfully removed 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 35
+OK: Able to remove existing value.
+	OK: Value successfully removed 93
+OK: Able to remove existing value.
+	OK: Value successfully removed 15
+OK: Able to remove existing value.
+	OK: Value successfully removed 77
+OK: Can't remove a value that is not contained 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 83
+OK: Empty List contains correct number of Guards.
+OK: List contains added value 21
+OK: List contains added value 49
+OK: List contains added value 92
+OK: List contains added value 86
+OK: List contains added value 35
+OK: List contains added value 93
+OK: List contains added value 15
+OK: List contains added value 77
+OK: List contains added value 86
+OK: List contains added value 83
+OK: Able to remove existing value.
+	OK: Value successfully removed 21
+OK: Able to remove existing value.
+	OK: Value successfully removed 49
+OK: Able to remove existing value.
+	OK: Value successfully removed 92
+OK: Able to remove existing value.
+	OK: Value successfully removed 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 35
+OK: Able to remove existing value.
+	OK: Value successfully removed 93
+OK: Able to remove existing value.
+	OK: Value successfully removed 15
+OK: Able to remove existing value.
+	OK: Value successfully removed 77
+OK: Can't remove a value that is not contained 86
+OK: Able to remove existing value.
+	OK: Value successfully removed 83
+Passed: 157/157
+==14497== 
+==14497== HEAP SUMMARY:
+==14497==     in use at exit: 0 bytes in 0 blocks
+==14497==   total heap usage: 582 allocs, 582 frees, 29,572 bytes allocated
+==14497== 
+==14497== All heap blocks were freed -- no leaks are possible
+==14497== 
+==14497== For counts of detected and suppressed errors, rerun with: -v
+==14497== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+*** cleaning up, deleting myprogram
+Sun Nov 17 19:42:14 PST 2019
