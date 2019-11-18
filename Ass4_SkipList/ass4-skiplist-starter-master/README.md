@@ -39,6 +39,10 @@ This option is not available in CSS Linux lab under LLVM 3.8.1, but is needed on
 - hicpp-special-member-functions: not defining move operator
 - cppcoreguidelines-owning-memory: not using gsl
 ## Clang-Tidy Warnings Generated
+To begin with, the one warning remaining from Professor Pisan's test, and
+ two the warnings from skiplist.cpp.
+ 
+ Next we will explore the warnings generated from my tests in main.
 #### 1. rand( ) is not actually random
 The first warning is letting me know that if I hard-code the seed of the
  random number generator, I will get a predictable sequence of values. I am
@@ -92,7 +96,47 @@ warning: Assigned value is garbage or undefined [clang-analyzer-core.uninitializ
                 NextNode = CoinTossNexts[I];
                          ^
 ```
+#### 3. Warnings in my tests
+The following warnings were generated for my tests. They consist of issues
+ with using array subscript instead of .at(), rand() not being that random
+ , and Non-constant reference parameters. Although I can see why these are
+  not great coding practice, I **do** know that the tests I wrote work as
+   intended how they are written. Therefore, I will leave it.
 
+```shell script
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:23:27: warning: non-const reference parameter 'List', make it const or use a pointer [google-runtime-references]
+void testRemove(SkipList& List, int Data){
+                          ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:35:24: warning: non-const reference parameter 'List', make it const or use a pointer [google-runtime-references]
+void testAdd(SkipList& List){
+                       ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:36:5: warning: random number generator seeded with a constant value will generate a predictable sequence of values [cert-msc32-c]
+    srand(1);
+    ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:38:5: warning: use range-based for loop instead [modernize-loop-convert]
+    for (int I = 0; I < 10; I++) {
+    ^   ~~~~~~~~~~~~~~~~~~~~~~~~
+        (int & Value : Values)
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:39:9: warning: do not use array subscript when the index is not an integer constant expression; use gsl::at() instead [cppcoreguidelines-pro-bounds-constant-array-index]
+        Values[I] = rand() % 100;
+        ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:39:21: warning: rand() has limited randomness; use C++11 random library instead [cert-msc30-c]
+        Values[I] = rand() % 100;
+                    ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:42:18: warning: do not use array subscript when the index is not an integer constant expression; use gsl::at() instead [cppcoreguidelines-pro-bounds-constant-array-index]
+        List.add(Values[Test]);
+                 ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:43:36: warning: do not use array subscript when the index is not an integer constant expression; use gsl::at() instead [cppcoreguidelines-pro-bounds-constant-array-index]
+        cout << isOK(List.contains(Values[Test]), true);
+                                   ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:44:49: warning: do not use array subscript when the index is not an integer constant expression; use gsl::at() instead [cppcoreguidelines-pro-bounds-constant-array-index]
+        cout << "List contains added value " << Values[Test] << endl;
+                                                ^
+/home/NETID/kezm/ass4-skiplist-starter-master/main.cpp:47:26: warning: do not use array subscript when the index is not an integer constant expression; use gsl::at() instead [cppcoreguidelines-pro-bounds-constant-array-index]
+        testRemove(List, Values[Data]);
+                         ^
+
+```
 
 
 ## Misc
