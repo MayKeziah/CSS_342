@@ -56,50 +56,6 @@ SkipList::SkipList(int Depth) {
 // T/F: The value of this SNode is to be duplicated up one level.
 bool SkipList::alsoHigher() const { return (rand() % 2) == 1; }
 
-// Add a new value to the SkipList. No duplicates. True if successful.
-bool SkipList::add(int Data) {
-    int CurrLevel = Depth - 1;
-    SNode* Current = FrontGuards[CurrLevel];
-    SNode* CoinTossNexts[Depth];
-    SNode* NextNode = nullptr;
-
-    // clang-tidy warns that Array elts may not be initialized.
-    for (int Level = 0; Level < Depth; Level++){
-        CoinTossNexts[Level] = nullptr;
-    }
-    bool CanAdd = false;
-    for (int I = Depth - 1; I > 0; I--){
-        CoinTossNexts[I] = findNext(Current, Data);
-        if (CoinTossNexts[I]->Data == Data){
-//            CanAdd = false;
-            return CanAdd;
-        }
-        Current = CoinTossNexts[I]->DownLevel;
-    }
-    CoinTossNexts[0] = findNext(Current, Data);
-    if (CoinTossNexts[0]->Data == Data){
-        CanAdd = false;
-    }
-    else{
-        auto* ToAdd = new SNode(Data);
-        addBefore(ToAdd, CoinTossNexts[0]);
-        for (int I = 1; I < Depth; I++){
-            if (alsoHigher()){
-                ToAdd = duplicateAbove(ToAdd);
-
-                // Clang-tidy claims CoinTossNexts[I] is not init
-                NextNode = CoinTossNexts[I];
-                addBefore(ToAdd, NextNode); //not init?
-            } else {
-                CanAdd = true;
-                return CanAdd;
-            }
-        }
-        CanAdd = true;
-    }
-    return CanAdd;
-}
-
 // Add the NewNode into the position before NextNode (Horizontally).
 void SkipList::addBefore(SNode *NewNode, SNode *NextNode) {
     if (NextNode->Prev != nullptr){
@@ -222,6 +178,50 @@ SkipList::~SkipList() {
   }
   delete[] FrontGuards;
   delete[] RearGuards;
+}
+
+// Add a new value to the SkipList. No duplicates. True if successful.
+bool SkipList::add(int Data) {
+    int CurrLevel = Depth - 1;
+    SNode* Current = FrontGuards[CurrLevel];
+    SNode* CoinTossNexts[Depth];
+    SNode* NextNode = nullptr;
+
+    // clang-tidy warns that Array elts may not be initialized.
+    for (int Level = 0; Level < Depth; Level++){
+        CoinTossNexts[Level] = nullptr;
+    }
+    bool CanAdd = false;
+    for (int I = Depth - 1; I > 0; I--){
+        CoinTossNexts[I] = findNext(Current, Data);
+        if (CoinTossNexts[I]->Data == Data){
+//            CanAdd = false;
+            return CanAdd;
+        }
+        Current = CoinTossNexts[I]->DownLevel;
+    }
+    CoinTossNexts[0] = findNext(Current, Data);
+    if (CoinTossNexts[0]->Data == Data){
+        CanAdd = false;
+    }
+    else{
+        auto* ToAdd = new SNode(Data);
+        addBefore(ToAdd, CoinTossNexts[0]);
+        for (int I = 1; I < Depth; I++){
+            if (alsoHigher()){
+                ToAdd = duplicateAbove(ToAdd);
+
+                // Clang-tidy claims CoinTossNexts[I] is not init
+                NextNode = CoinTossNexts[I];
+                addBefore(ToAdd, NextNode); //not init?
+            } else {
+                CanAdd = true;
+                return CanAdd;
+            }
+        }
+        CanAdd = true;
+    }
+    return CanAdd;
 }
 
 // Remove a value from the SkipList. True if successful.
