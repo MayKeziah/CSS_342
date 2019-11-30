@@ -9,13 +9,14 @@
 using namespace std;
 
 class Bank {
-public:
-  Bank();
-  ~Bank();
-  void processTransactions(const string &FileName);
-  void displayAllBankBalances() const;
-
 private:
-  AccountTree Accounts;
+    AccountTree Accounts;
+
+public:
+    Bank();
+    ~Bank();
+    void processTransactions(const string &FileName);
+
+  void displayAllBankBalances() const;
 };
 #endif // ASS5_BANK_H

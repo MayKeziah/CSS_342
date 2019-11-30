@@ -204,6 +204,33 @@ bank.cpp.s:
 	$(MAKE) -f CMakeFiles/ass5_banker.dir/build.make CMakeFiles/ass5_banker.dir/bank.cpp.s
 .PHONY : bank.cpp.s
 
+fund.o: fund.cpp.o
+
+.PHONY : fund.o
+
+# target to build an object file
+fund.cpp.o:
+	$(MAKE) -f CMakeFiles/ass5_banker.dir/build.make CMakeFiles/ass5_banker.dir/fund.cpp.o
+.PHONY : fund.cpp.o
+
+fund.i: fund.cpp.i
+
+.PHONY : fund.i
+
+# target to preprocess a source file
+fund.cpp.i:
+	$(MAKE) -f CMakeFiles/ass5_banker.dir/build.make CMakeFiles/ass5_banker.dir/fund.cpp.i
+.PHONY : fund.cpp.i
+
+fund.s: fund.cpp.s
+
+.PHONY : fund.s
+
+# target to generate assembly for a file
+fund.cpp.s:
+	$(MAKE) -f CMakeFiles/ass5_banker.dir/build.make CMakeFiles/ass5_banker.dir/fund.cpp.s
+.PHONY : fund.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -249,6 +276,9 @@ help:
 	@echo "... bank.o"
 	@echo "... bank.i"
 	@echo "... bank.s"
+	@echo "... fund.o"
+	@echo "... fund.i"
+	@echo "... fund.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -6,7 +6,19 @@
 #include <iostream>
 
 class AccountTree {
+private:
+    class Node {
+    public:
+        explicit Node(Account *Account)
+                : Account{Account}, Right{nullptr}, Left{nullptr} {};
+        Account *Account;
+        Node *Right;
+        Node *Left;
+    };
+    Node *Root;
+
 public:
+
   // Create BST
   AccountTree();
 
@@ -28,16 +40,5 @@ public:
 
   // check if tree is empty
   bool isEmpty() const;
-
-private:
-  class Node {
-  public:
-    explicit Node(Account *Account)
-        : Account{Account}, Right{nullptr}, Left{nullptr} {};
-    Account *Account;
-    Node *Right;
-    Node *Left;
-  };
-  Node *Root;
 };
 #endif // ASS5_ACCOUNTTREE_H

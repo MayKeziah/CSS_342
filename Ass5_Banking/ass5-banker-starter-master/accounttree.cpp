@@ -12,7 +12,8 @@ bool AccountTree::insert(Account *Account) { return true; }
 // Retrieve account
 // returns true if successful AND *Account points to account
 bool AccountTree::retrieve(const int &AccountNumber, Account *&Account) const {
-  return true;
+  if (Root->Account)
+    return true;
 }
 
 // Display information on all accounts

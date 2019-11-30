@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/ass5_banker.dir/account.cpp.o"
   "CMakeFiles/ass5_banker.dir/accounttree.cpp.o"
   "CMakeFiles/ass5_banker.dir/bank.cpp.o"
+  "CMakeFiles/ass5_banker.dir/fund.cpp.o"
   "CMakeFiles/ass5_banker.dir/main.cpp.o"
   "libass5_banker.dll.a"
 )

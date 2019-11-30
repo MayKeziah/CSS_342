@@ -98,6 +98,12 @@
 		<Unit filename="/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass5_Banking/ass5-banker-starter-master/bank.h">
 			<Option target="ass5_banker"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass5_Banking/ass5-banker-starter-master/fund.cpp">
+			<Option target="ass5_banker"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass5_Banking/ass5-banker-starter-master/fund.h">
+			<Option target="ass5_banker"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass5_Banking/ass5-banker-starter-master/main.cpp">
 			<Option target="ass5_banker"/>
 		</Unit>
