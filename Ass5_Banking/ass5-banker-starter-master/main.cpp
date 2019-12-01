@@ -98,8 +98,18 @@ void fundTest(){
      *****************************************/
     Test0.deposit(100);
     check(Test0.bal(), 100);
-    cout << "Fund balance is as expected following deposit";
+    cout << "Fund balance is as expected following deposit" << endl;
 
+    /*****************************************
+     * Test bal / withdraw when insufficient
+     *****************************************/
+    check(Test0.withdraw(101), false);
+    cout << "Fund blocks withdrawal when balance insufficient" << endl;
+
+    check(Test0.withdraw(25), true);
+    cout << "Fund accepts withdrawal when balance is sufficient" << endl;
+    check(Test0.bal(), 75);
+    cout << "Fund balance is as expected following withdrawal" << endl;
 }
 
 void accountTest(){
