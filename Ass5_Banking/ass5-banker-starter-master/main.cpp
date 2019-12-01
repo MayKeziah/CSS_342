@@ -22,7 +22,12 @@ template <typename Type> void check(const Type &Got, const Type &Expected){
 }
 
 void bankTest(){
+    Bank Test0;
 
+    string FileName = R"(C:\Users\E\Documents\UWB\1_F19\CSS_342\Code)";
+    FileName += R"(\Ass5_Banking\ass5-banker-starter-master\BankTransIn.txt)";
+
+    Test0.processTransactions(FileName);
 }
 
 void accountTreeTest(){
@@ -30,10 +35,10 @@ void accountTreeTest(){
      * Test single Node AccountTree
      *****************************************/
     auto* ExpectedAccount = new Account(1234, "Last", "First");
-    AccountTree test0;
-    test0.insert(ExpectedAccount);
+    AccountTree Test0;
+    Test0.insert(ExpectedAccount);
     Account* RetrievedAccount;
-    test0.retrieve(ExpectedAccount->getID(), RetrievedAccount);
+    Test0.retrieve(ExpectedAccount->getID(), RetrievedAccount);
 
     check(RetrievedAccount, ExpectedAccount);
 
@@ -41,7 +46,7 @@ void accountTreeTest(){
 
     delete ExpectedAccount;
     ExpectedAccount = nullptr;
-    test0.clear();
+    Test0.clear();
 
     /*****************************************
      * Test clear/insert/retrieve/<</outInOrder
@@ -49,14 +54,14 @@ void accountTreeTest(){
      *****************************************/
     int IDs[8] = {3333, 1111, 2222, 4444, 1234, 5555, 6666, 2345};
     for (auto Id : IDs){
-        test0.insert(new Account(Id, "", ""));
+        Test0.insert(new Account(Id, "", ""));
     }
 
     stringstream Expected;
     Expected << "1111 1234 2222 2345 3333 4444 5555 6666 ";
 
     stringstream Got;
-    Got << test0;
+    Got << Test0;
 
     check(Got.str(), Expected.str());
     cout << "Populated tree InOrder to ostream" << endl;
@@ -68,16 +73,32 @@ void fundTest(){
     /*****************************************
      * Test single parameter constructor
      *****************************************/
-    Fund test0("Money Market");
+    Fund Test0("Money Market");
 
     stringstream Expected;
     Expected << "Money Market: $0";
 
     stringstream Got;
-    Got << test0;
+    Got << Test0;
 
     check(Got.str(), Expected.str());
     cout << "Single parameter fund constructor" << endl;
+
+    /*****************************************
+     * Test bal
+     *****************************************/
+    Expected.str("");
+    Got.str("");
+
+    check(Test0.bal(), 0);
+    cout << "Starting fund balance == 0" << endl;
+
+    /*****************************************
+     * Test bal / deposit
+     *****************************************/
+    Test0.deposit(100);
+    check(Test0.bal(), 100);
+    cout << "Fund balance is as expected following deposit";
 
 }
 
@@ -85,13 +106,13 @@ void accountTest(){
     /*****************************************
      * Test account constructor
      *****************************************/
-    Account test0(1234, "Last", "First");
+    Account Test0(1234, "Last", "First");
 
     stringstream Expected;
     Expected << "1234: Last, First";
 
     stringstream Got;
-    Got << test0;
+    Got << Test0;
     check(Got.str(), Expected.str());
     cout << "Regular account constructor" << endl;
 

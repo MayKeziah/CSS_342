@@ -16,8 +16,21 @@ private:
     int Balance;
     string TransactionHistory;
 public:
+    // Gives a name and balance of zero
     explicit Fund(string Name);
     ~Fund(); //TODO
+
+    // Returns the name of the fund
+    string getName();
+
+    // Withdraw amount false if insufficient funds
+    bool withdraw(int Amount);
+
+    // check balance
+    int bal();
+
+    // deposit
+    void deposit(int Amount);
 };
 
 

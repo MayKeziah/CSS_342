@@ -11,11 +11,6 @@ using namespace std;
 
 class Account {
     friend ostream& operator<<(ostream& Os, Account& Account);
-public:
-    Account(int ID, string LName, string FName);
-    ~Account();
-    int getID() const;
-
 private:
     string FirstName;
     string LastName;
@@ -23,5 +18,22 @@ private:
     const static int FUNDCOUNT = 10;
     const static string FundName[];
     Fund* Funds[FUNDCOUNT];
+public:
+    Account(int ID, string LName, string FName);
+    ~Account();
+
+    //returns accountID
+    int getID() const;
+
+    // if refers to bond or money market index, returns another like fund
+    // otherwise, it returns -1
+    int coverWithdrawal(int FailedFund);
+
+    // Deposit amount into Fund (given index)
+    void deposit(int Into, int Amount);
+
+    // if sufficient funds, withdraws the amount from the fund index
+    bool withdrawal(int From, int Amount);
+
 };
 #endif // ASS5_ACCOUNT_H
