@@ -1,6 +1,5 @@
 
 #include "bank.h"
-#include "Account.h"
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -22,7 +21,46 @@ template <typename Type> void check(const Type &Got, const Type &Expected){
     }
 }
 
+void bankTest(){
+
+}
+
 void accountTreeTest(){
+    /*****************************************
+     * Test single Node AccountTree
+     *****************************************/
+    auto* ExpectedAccount = new Account(1234, "Last", "First");
+    AccountTree test0;
+    test0.insert(ExpectedAccount);
+    Account* RetrievedAccount;
+    test0.retrieve(ExpectedAccount->getID(), RetrievedAccount);
+
+    check(RetrievedAccount, ExpectedAccount);
+
+    cout << "Single node AccountTree insert/retrieve" << endl;
+
+    delete ExpectedAccount;
+    ExpectedAccount = nullptr;
+    test0.clear();
+
+    /*****************************************
+     * Test clear/insert/retrieve/<</outInOrder
+     * for populated tree
+     *****************************************/
+    int IDs[8] = {3333, 1111, 2222, 4444, 1234, 5555, 6666, 2345};
+    for (auto Id : IDs){
+        test0.insert(new Account(Id, "", ""));
+    }
+
+    stringstream Expected;
+    Expected << "1111 1234 2222 2345 3333 4444 5555 6666 ";
+
+    stringstream Got;
+    Got << test0;
+
+    check(Got.str(), Expected.str());
+    cout << "Populated tree InOrder to ostream" << endl;
+
 
 }
 
@@ -44,7 +82,6 @@ void fundTest(){
 }
 
 void accountTest(){
-
     /*****************************************
      * Test account constructor
      *****************************************/
@@ -71,6 +108,7 @@ int main(int Argc, char *Argv[]) {
     accountTest();
     fundTest();
     accountTreeTest();
+    bankTest();
 
     cout << endl << "Total: " << endl
     << "\t" << TestsPassed << "/" << Tests << endl;

@@ -19,7 +19,6 @@ CMakeFiles/ass5_banker.dir/bank.cpp.o: ../fund.h
 CMakeFiles/ass5_banker.dir/fund.cpp.o: ../fund.cpp
 CMakeFiles/ass5_banker.dir/fund.cpp.o: ../fund.h
 
-CMakeFiles/ass5_banker.dir/main.cpp.o: ../Account.h
 CMakeFiles/ass5_banker.dir/main.cpp.o: ../account.h
 CMakeFiles/ass5_banker.dir/main.cpp.o: ../accounttree.h
 CMakeFiles/ass5_banker.dir/main.cpp.o: ../bank.h

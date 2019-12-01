@@ -5,13 +5,14 @@
 #include "accounttree.h"
 #include <fstream>
 #include <string>
+#include <queue>
 
 using namespace std;
 
 class Bank {
 private:
     AccountTree Accounts;
-
+    queue<string> Transactions;
 public:
     Bank();
     ~Bank();

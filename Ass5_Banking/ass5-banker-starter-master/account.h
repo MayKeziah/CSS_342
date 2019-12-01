@@ -5,6 +5,7 @@
 #include "fund.h"
 #include <string>
 #include <iostream>
+#include <cassert>
 
 using namespace std;
 
@@ -16,11 +17,11 @@ public:
     int getID() const;
 
 private:
-    const static int FUNDCOUNT = 10;
-    Fund* Funds[FUNDCOUNT];
     string FirstName;
     string LastName;
     int ID;
+    const static int FUNDCOUNT = 10;
     const static string FundName[];
+    Fund* Funds[FUNDCOUNT];
 };
 #endif // ASS5_ACCOUNT_H

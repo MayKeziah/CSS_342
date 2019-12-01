@@ -19,9 +19,18 @@ const string Account::FundName[] =
     };
 
 Account::Account(int ID, string LName, string FName) :
-ID{ID}, LastName{LName}, FirstName{FName} {}
+ID{ID}, LastName{LName}, FirstName{FName} {
+//    assert( (ID > 999) && (ID < 10000) );
+    for (int I = 0; I < FUNDCOUNT; I++){
+        Funds[I] = new Fund(FundName[I]); //TODO delete
+    }
+}
 
-Account::~Account() {} //TODO
+Account::~Account() {
+    for (int I = 0; I < FUNDCOUNT; I++){
+        delete Funds[I];
+    }
+} //TODO
 
 //Sends account information to the ostream
 ostream &operator<<(ostream &Os, Account &TheAccount) {

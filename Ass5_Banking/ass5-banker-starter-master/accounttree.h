@@ -6,16 +6,45 @@
 #include <iostream>
 
 class AccountTree {
+    // Inorder list of AccountID's
+    friend ostream& operator<<(ostream& Os, AccountTree& Tree);
+
 private:
+
     class Node {
     public:
         explicit Node(Account *Account)
                 : Account{Account}, Right{nullptr}, Left{nullptr} {};
+//        ~Node(){
+//            delete Account;
+//            Account = nullptr;
+//        }
         Account *Account;
         Node *Right;
         Node *Left;
+
+        // Account ID
+        friend ostream& operator<<(ostream& Os, Node& Node){
+            Os << Node.Account->getID();
+            return Os;
+        };
     };
+
     Node *Root;
+
+    // Recursively insert new account
+    bool insertAccount(Account *Account, Node *Current);
+
+    // Recursively search for account
+    // returns true if successful AND *Account points to account
+    bool retreiveAccount
+    (const int &AccountNumber, Account *&Account, Node* Current) const;
+
+    // Recursively clear tree
+    void clearTree(Node*& Current);
+
+    //recursively send AccountID's to ostream InOrder
+    void outInOrder(ostream &Os, Node *Current);
 
 public:
 
