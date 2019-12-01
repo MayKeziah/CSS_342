@@ -52,7 +52,8 @@ bool Account::withdrawal(int From, int Amount) {
     if (From > FUNDCOUNT - 1) {
         cerr << "Error: Fund " << From << " does not exist." << endl;
         return false;
-    } if (!Funds[From]->withdraw(Amount)) {
+    }
+    if (!Funds[From]->withdraw(Amount)) {
         int OtherFund = coverWithdrawal(From);
         int Remainder = Amount - Funds[From]->bal();
         if (OtherFund != -1 && Funds[OtherFund]->bal() >= Remainder) {

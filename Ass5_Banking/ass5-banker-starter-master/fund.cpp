@@ -23,8 +23,15 @@ string Fund::getName() {
 
 // Withdraw amount
 bool Fund::withdraw(int Amount) {
+    if (Amount <= 0){
+        cerr << "Error: Amount to withdraw from " << Name <<
+        ", " << Amount << ", is negative or zero" << endl;
+        return false;
+    }
     if (Amount <= Balance){
         Balance -= Amount;
+        TransactionHistory += "-\t$" + Amount;
+        TransactionHistory += "\n";
         return true;
     }
     return false;
@@ -37,6 +44,13 @@ int Fund::bal() {
 
 // deposit
 void Fund::deposit(int Amount) {
-    Balance += Amount;
+    if (Amount <= 0){
+        cerr << "Error: Amount to deposit into " << Name <<
+             ", " << Amount << ", is negative or zero" << endl;
+    } else{
+        Balance += Amount;
+        TransactionHistory += "+\t$" + Amount;
+        TransactionHistory += "\n";
+    }
 }
 
