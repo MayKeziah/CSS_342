@@ -20,9 +20,14 @@ void Bank::processTransactions(const string &FileName) {
         }
     }
     File.close();
+    cout << "The following requests were denied:\n" << endl;
     parse();
+    cout << "---------------------------------------------------" << endl;
+    cout << "\nHistory requests: \n\n" << HistoryRequests << endl;
+    cout << "---------------------------------------------------" << endl
+    << "\nAll Bank Balances:\n" << endl;
     displayAllBankBalances();
-
+    cout << "---------------------------------------------------" << endl;
 }
 
 // Display all bank balances to console
@@ -31,20 +36,21 @@ void Bank::displayAllBankBalances() const {
 }
 
 // if can withdraw 'from', deposits 'to'
-void
+bool
 Bank::transfer(int FromID, int FromFund, int ToID, int ToFund, int Amount) {
     if(withdraw(FromID, FromFund, Amount)){
-        deposit(ToID, ToFund, Amount);
-    }
+        return deposit(ToID, ToFund, Amount);
+    } return false;
 }
 
 // increases balance by amount
-void Bank::deposit(int AccountID, int Fund, int Amount) {
+bool Bank::deposit(int AccountID, int Fund, int Amount) {
     Account* SendMoney;
     Accounts.retrieve(AccountID, SendMoney);
     if (SendMoney != nullptr){
         SendMoney->deposit(Fund, Amount);
-    }
+        return true;
+    } return false;
 }
 
 // True if Account Fund contains sufficient funds,
@@ -60,59 +66,108 @@ bool Bank::withdraw(int AccountID, int Fund, int Amount) {
 
 // Read and process transaction requests
 void Bank::parse() {
-    while(!Transactions.empty()){
+    while(!Transactions.empty()) {
         stringstream Request;
-        Account* ToRetreive = nullptr;
+//        auto *ToRetreive = new Account(1234, "", ""); //TODO
+        Account *ToRetreive = nullptr;
         int Account;
+        int Amount;
 
         Request << Transactions.front();
-        if (Request.str() != ""){
-
-        }
         Transactions.pop();
-        string Transaction;
+        string Transaction; //TODO quick science
         Request >> Transaction;
 
-        if(Transaction == "O"){ // Open account
-            string Last;
-            string First;
-            Request >> Last >> First >> Account;
-            open(Account, Last, First);
-        }
-        else if (Transaction == "H"){
-            Request >> Account;
-            if (Account > 9999){
-                Accounts.retrieve(Account / 10, ToRetreive);
-                if (ToRetreive != nullptr){
-                    cout << ToRetreive->history(Account % 10);
-                }
-            }else {
-                Accounts.retrieve(Account, ToRetreive);
-                if (ToRetreive != nullptr){
-                    cout << ToRetreive->history();
-                }
-            }
+        if (Transaction == "O") { // Open account
+            parseOpen(Request, Account);
+        } else if (Transaction == "H") { // View account history
+            parseHistory(ToRetreive, Request, Account);
 
+        } else if (Transaction == "D") {
+                parseDeposit(Request, Account, Amount);
+        } else if (Transaction == "W") {
+                parseWithdrawal(Request, Account, Amount);
+        } else if (Transaction == "T") {
+                parseTransfer(Request, Account, Amount);
         }
-        else {
-            int Amount;
-            if (Transaction == "D") {
-                Request >> Account >> Amount;
-                deposit(Account / 10, Account % 10, Amount);
-            } else if (Transaction == "W") {
-                Request >> Account >> Amount;
-                withdraw(Account / 10, Account % 10, Amount);
-            } else if (Transaction == "T"){
-                int ToAccount;
-                Request >> Account >> Amount >> ToAccount;
-                transfer(Account / 10, Account % 10, ToAccount / 10,
-                        ToAccount % 10, Amount);
-            }
+//        delete ToRetreive;
+    }
+}
+
+// Parses a transfer request
+void Bank::parseTransfer(stringstream &Request, int &Account, int &Amount) {
+    int ToAccount;
+    Request >> Account >> Amount >> ToAccount;
+    if (!transfer(Account / 10, Account % 10, ToAccount / 10,
+                  ToAccount % 10, Amount)) {
+        cout << "ERROR: T " << Account << " " << Amount
+             << " " << ToAccount << endl
+             << "\tTransfer request fail." << endl;
+    }
+}
+
+// Parses a withdrawal request
+void Bank::parseWithdrawal(stringstream &Request, int &Account, int &Amount) {
+    Request >> Account >> Amount;
+    if (!withdraw(Account / 10, Account % 10, Amount)) {
+        cout << "ERROR: W " << Account << " " << Amount << endl
+             << "\tWithdrawal request fail. Account number "
+             << Account << "." << endl;
+    }
+}
+
+// Parses a deposit request
+void Bank::parseDeposit(stringstream &Request, int &Account, int &Amount) {
+    Request >> Account >> Amount;
+    if (!deposit(Account / 10, Account % 10, Amount)) {
+        cout << "ERROR: D " << Account << " " << Amount << endl
+             << "\tDeposit request fail. Account number "
+             << Account << " does not exist." << endl;
+    }
+}
+
+// Parses an account history request
+void
+Bank::parseHistory(Account *ToRetreive, stringstream &Request, int &Account) {
+    Request >> Account;
+    if (Account > 9999) { // For specific fund
+                Accounts.retrieve(Account / 10, ToRetreive);
+        if (ToRetreive != nullptr) {
+            history(ToRetreive->history(Account % 10));
+        } else {
+            cout << "ERROR: H " << Account << endl
+                 << "\tHistory request fail. Account number "
+                 << Account << " does not exist." << endl;
         }
+    } else { // For entire account
+                Accounts.retrieve(Account, ToRetreive);
+        if (ToRetreive != nullptr) {
+            history(ToRetreive->history());
+        } else {
+            cout << "ERROR: H " << Account << endl
+                 << "\tHistory request fail. Account number "
+                 << Account << " does not exist." << endl;
+        }
+    }
+}
+
+// Parses an open account request
+void Bank::parseOpen(stringstream &Request, int &Account) {
+    string Last;
+    string First;
+    Request >> Last >> First >> Account;
+    if (!open(Account, Last, First)) { // If open fails
+        cout << "ERROR: O " << Last << " " << First << " " << Account
+             << endl << "\tOpen Fail. Account number "
+             << Account << " already exists." << endl;
     }
 }
 
 bool Bank::open(int AccountID, string LastName, string FirstName) {
     return Accounts.insert
     (new Account(AccountID, LastName, FirstName) );
+}
+
+void Bank::history(string AccountHistory) {
+    HistoryRequests += AccountHistory;
 }

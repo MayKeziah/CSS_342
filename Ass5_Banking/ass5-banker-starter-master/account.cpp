@@ -6,17 +6,17 @@
 //name of funds
 const string Account::FundName[] =
     {
-    "Money Market",
+    "      Money Market",
     "Prime Money Market",
-    "Long-Term Bond",
-    "Short-Term Bond",
-    "500 Index Fund",
+    "    Long-Term Bond",
+    "   Short-Term Bond",
+    "    500 Index Fund",
 
     "Capital Value Fund",
     "Growth Equity Fund",
-    "Growth Index Fund",
-    "Value Fund",
-    "Value Stock Index"
+    " Growth Index Fund",
+    "        Value Fund",
+    " Value Stock Index"
     };
 
 // Constructor
@@ -94,7 +94,7 @@ void Account::deposit(int Into, int Amount) {
 // return transaction history for this account
 string Account::history() {
     string AccountHistory;
-    AccountHistory += "------- " + to_string(ID) + ": "
+    AccountHistory += "------- History of " + to_string(ID) + ": "
             + LastName + ", " + FirstName + " -------\n";
     for (int Fund = 0; Fund < FUNDCOUNT; Fund++){
         AccountHistory += Funds[Fund]->history();
@@ -105,7 +105,8 @@ string Account::history() {
 // return transaction history for a specific fund
 string Account::history(int Of) {
     string AccountHistory;
-    AccountHistory += "------- " + to_string(ID) + to_string(Of) + ": "
+    AccountHistory += "------- History of " + to_string(ID) + to_string(Of) +
+            ": "
                       + LastName + ", " + FirstName + " -------\n";
     return AccountHistory + Funds[Of]->history();
 }
