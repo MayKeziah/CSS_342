@@ -9,7 +9,7 @@ Fund::Fund(string Name) :
 Name{Name}, Balance{0}, TransactionHistory{""}{}
 
 ostream &operator<<(ostream &Os, Fund &TheFund) {
-    Os << TheFund.Name << ":  $" << TheFund.Balance;
+    Os << TheFund.Name << ":\n  $" << TheFund.Balance;
     return Os;
 }
 
@@ -30,7 +30,7 @@ bool Fund::withdraw(int Amount) {
     }
     if (Amount <= Balance){
         Balance -= Amount;
-        TransactionHistory += "\t\t- $" + to_string(Amount) + "\n";
+        TransactionHistory += "\t- $" + to_string(Amount) + "\n";
         return true;
     }
     return false;
@@ -48,7 +48,7 @@ void Fund::deposit(int Amount) {
                 + to_string(Amount) + ", is negative or zero\n";
     } else{
         Balance += Amount;
-        TransactionHistory += "\t\t+ $" + to_string(Amount) + "\n";
+        TransactionHistory += "\t+ $" + to_string(Amount) + "\n";
     }
 }
 

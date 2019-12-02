@@ -9,6 +9,9 @@ AccountTree::~AccountTree() {
 
 // Insert new account
 bool AccountTree::insert(Account *Account) {
+    if (Account->getID() > 9999){
+        return false;
+    }
     if (isEmpty()){
         Root = new Node(Account); //TODO delete
         return true;

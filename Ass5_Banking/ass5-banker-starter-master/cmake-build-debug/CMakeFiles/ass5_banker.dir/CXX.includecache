@@ -6,19 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass5_Banking/ass5-banker-starter-master/account.cpp
-account.h
-/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass5_Banking/ass5-banker-starter-master/account.h
-
-/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass5_Banking/ass5-banker-starter-master/account.h
+/cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass5_Banking/ass5-banker-starter-master/fund.cpp
 fund.h
 /cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass5_Banking/ass5-banker-starter-master/fund.h
-string
--
-iostream
--
-cassert
--
 
 /cygdrive/c/Users/E/Documents/UWB/1_F19/CSS_342/Code/Ass5_Banking/ass5-banker-starter-master/fund.h
 iostream
