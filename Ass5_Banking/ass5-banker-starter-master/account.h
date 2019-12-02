@@ -35,5 +35,17 @@ public:
     // if sufficient funds, withdraws the amount from the fund index
     bool withdrawal(int From, int Amount);
 
+    // return transaction history for this account
+    string history();
+
+    // return transaction history for a specific fund
+    string history(int Of);
+
+    // Balance of given fund index
+    int balance(int Of);
+
+    // Sends funds to ostream
+    void fundsOut(ostream &Os) const;
+
 };
 #endif // ASS5_ACCOUNT_H

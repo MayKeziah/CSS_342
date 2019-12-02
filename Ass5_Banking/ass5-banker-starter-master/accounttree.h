@@ -40,7 +40,7 @@ private:
     void clearTree(Node*& Current);
 
     //recursively send AccountID's to ostream InOrder
-    void outInOrder(ostream &Os, Node *Current);
+    void outInOrder(ostream &Os, Node *Current) const;
 
 public:
 

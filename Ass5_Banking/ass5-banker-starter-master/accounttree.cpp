@@ -38,7 +38,7 @@ AccountTree::insertAccount(Account *Account, AccountTree::Node *Current) {
 
 // Display information on all accounts
 void AccountTree::display() const {
-    //TODO
+    outInOrder(cout, Root);
 }
 
 // delete all information in AccountTree
@@ -96,11 +96,11 @@ ostream &operator<<(ostream &Os, AccountTree &Tree) {
 
 
 //recursively send AccountID's to ostream InOrder
-void AccountTree::outInOrder(ostream &Os, AccountTree::Node *Current) {
+void AccountTree::outInOrder(ostream &Os, AccountTree::Node *Current) const {
     if(Current->Left != nullptr){
         outInOrder(Os, Current->Left);
     }
-    Os << Current->Account->getID() << " ";
+    Os << *(Current->Account) << endl;
     if(Current->Right != nullptr){
         outInOrder(Os, Current->Right);
     }

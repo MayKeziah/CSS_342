@@ -31,6 +31,10 @@ public:
 
     // deposit
     void deposit(int Amount);
+
+    // return transaction history for this fund
+    string history();
+
 };
 
 

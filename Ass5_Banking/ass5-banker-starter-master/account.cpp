@@ -3,6 +3,7 @@
 
 #include "account.h"
 
+//name of funds
 const string Account::FundName[] =
     {
     "Money Market",
@@ -18,6 +19,7 @@ const string Account::FundName[] =
     "Value Stock Index"
     };
 
+// Constructor
 Account::Account(int ID, string LName, string FName) :
 ID{ID}, LastName{LName}, FirstName{FName} {
 //    assert( (ID > 999) && (ID < 10000) );
@@ -26,6 +28,7 @@ ID{ID}, LastName{LName}, FirstName{FName} {
     }
 }
 
+// Destructor
 Account::~Account() {
     for (int I = 0; I < FUNDCOUNT; I++){
         delete Funds[I];
@@ -34,24 +37,28 @@ Account::~Account() {
 
 //Sends account information to the ostream
 ostream &operator<<(ostream &Os, Account &TheAccount) {
-    if (TheAccount.ID == 0){
-        Os << "Empty Account";
-    }
-    else{
-        Os << TheAccount.ID;
-        Os << ": " << TheAccount.LastName << ", " << TheAccount.FirstName;
-    }
+    Os << "------- " << TheAccount.ID
+    << ": " << TheAccount.LastName << ", " << TheAccount.FirstName
+    << " -------\n";
+    TheAccount.fundsOut(Os);
     return Os;
 }
 
+//returns accountID
 int Account::getID() const {
     return ID;
 }
 
+// if sufficient funds, withdraws the amount from the fund index
 bool Account::withdrawal(int From, int Amount) {
     if (From > FUNDCOUNT - 1) {
-        cerr << "Error: Fund " << From << " does not exist." << endl;
+//        cerr << "Error: Fund " << From << " does not exist." << endl;
         return false;
+    } if (Amount <= 0) {
+//        cerr << "Error: Amount to withdraw from " << Funds[From]->getName() <<
+//             ", " << Amount << ", is negative or zero" << endl;
+
+        return Funds[From]->withdraw(Amount);
     }
     if (!Funds[From]->withdraw(Amount)) {
         int OtherFund = coverWithdrawal(From);
@@ -84,3 +91,33 @@ void Account::deposit(int Into, int Amount) {
     Funds[Into]->deposit(Amount);
 }
 
+// return transaction history for this account
+string Account::history() {
+    string AccountHistory;
+    AccountHistory += "------- " + to_string(ID) + ": "
+            + LastName + ", " + FirstName + " -------\n";
+    for (int Fund = 0; Fund < FUNDCOUNT; Fund++){
+        AccountHistory += Funds[Fund]->history();
+    }
+    return AccountHistory;
+}
+
+// return transaction history for a specific fund
+string Account::history(int Of) {
+    string AccountHistory;
+    AccountHistory += "------- " + to_string(ID) + to_string(Of) + ": "
+                      + LastName + ", " + FirstName + " -------\n";
+    return AccountHistory + Funds[Of]->history();
+}
+
+// Balance of given fund index
+int Account::balance(int Of) {
+    return Funds[Of]->bal();
+}
+
+// Sends funds to ostream
+void Account::fundsOut(ostream &Os) const{
+    for(auto* Fund : Funds){
+        Os << *Fund << endl;
+    }
+}
