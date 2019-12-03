@@ -13,11 +13,11 @@ template <typename Type> void check(const Type &Got, const Type &Expected){
     Tests++;
     if(Got == Expected){
         TestsPassed++;
-        cout << "    Pass: ";
+        cout << "\tPass: ";
     } else {
-        cout << "    -- Got: " << Got << endl;
-        cout << "    -- Expected: " << Expected << endl;
-        cout << "    Error: ";
+        cout << "\t-- Got: " << Got << endl;
+        cout << "\t-- Expected: " << Expected << endl;
+        cout << "\tError: ";
     }
 }
 
@@ -160,7 +160,7 @@ void fundTest(){
      *****************************************/
 //    Got << Test0.history();
 //    Expected << Test0.getName() << ":\n"
-//    << "        + $100\n        - $25\n Balance: $75\n";
+//    << "\t\t+ $100\n\t\t- $25\n Balance: $75\n";
 //    check(Got.str(), Expected.str());
 //    cout << "Fund history recorded for successful transactions" << endl;
 }
@@ -227,6 +227,10 @@ int main(int Argc, char *Argv[]) {
         cout << "The command line argument(s) was " << Argv[I] << std::endl;
         string FileName = Argv[I];
         Bank.processTransactions(FileName);
+        cout << endl
+        <<
+        "___________________________________________________________________"
+        "_____________________" << endl << endl;
     }
 //    accountTest();
 //    fundTest();
@@ -234,7 +238,7 @@ int main(int Argc, char *Argv[]) {
 //    bankTest();
 
 //    cout << endl << "Total: " << endl
-//    << "    " << TestsPassed << "/" << Tests << endl;
+//    << "\t" << TestsPassed << "/" << Tests << endl;
     cout << "Done" << endl;
     return 0;
 }

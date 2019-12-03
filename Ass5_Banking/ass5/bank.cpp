@@ -45,23 +45,27 @@ Bank::transfer(int FromID, int FromFund, int ToID, int ToFund, int Amount) {
 
 // increases balance by amount
 bool Bank::deposit(int AccountID, int Fund, int Amount) {
+    ErrorLog.str("");
     Account* SendMoney;
     Accounts.retrieve(AccountID, SendMoney);
     if (SendMoney != nullptr){
-        SendMoney->deposit(Fund, Amount);
-        return true;
-    } return false;
+        return SendMoney->deposit(Fund, Amount, ErrorLog);
+    }
+    ErrorLog << "Account " << AccountID << " does not exist." << endl;
+    return false;
 }
 
 // True if Account Fund contains sufficient funds,
 // Withdraws amount. False if insufficient
 bool Bank::withdraw(int AccountID, int Fund, int Amount) {
+    ErrorLog.str("");
     Account* RequestMoney;
     Accounts.retrieve(AccountID, RequestMoney);
     if(RequestMoney == nullptr){
+        ErrorLog << "Account " << AccountID << " does not exist." << endl;
         return false;
     }
-    return RequestMoney->withdrawal(Fund, Amount);
+    return RequestMoney->withdrawal(Fund, Amount, ErrorLog);
 }
 
 // Read and process transaction requests
@@ -102,7 +106,7 @@ void Bank::parseTransfer(stringstream &Request, int &Account, int &Amount) {
                   ToAccount % 10, Amount)) {
         cout << "ERROR: T " << Account << " " << Amount
              << " " << ToAccount << endl
-             << "    Transfer request fail." << endl;
+             << "    Transfer request fail. " << ErrorLog.str() << endl;
     }
 }
 
@@ -111,8 +115,7 @@ void Bank::parseWithdrawal(stringstream &Request, int &Account, int &Amount) {
     Request >> Account >> Amount;
     if (!withdraw(Account / 10, Account % 10, Amount)) {
         cout << "ERROR: W " << Account << " " << Amount << endl
-             << "    Withdrawal request fail. Account number "
-             << Account << "." << endl;
+             << "    Withdrawal request fail. " << ErrorLog.str() << endl;
     }
 }
 
@@ -121,8 +124,7 @@ void Bank::parseDeposit(stringstream &Request, int &Account, int &Amount) {
     Request >> Account >> Amount;
     if (!deposit(Account / 10, Account % 10, Amount)) {
         cout << "ERROR: D " << Account << " " << Amount << endl
-             << "    Deposit request fail. Account number "
-             << Account << " does not exist." << endl;
+             << "    Deposit request fail. " << ErrorLog.str() << endl;
     }
 }
 
@@ -159,7 +161,7 @@ void Bank::parseOpen(stringstream &Request, int &Account) {
     if (!open(Account, Last, First)) { // If open fails
         cout << "ERROR: O " << Last << " " << First << " " << Account
              << endl << "    Open Fail. Account number "
-             << Account << " already exists." << endl;
+             << Account << " already exists." << endl << endl;
     }
 }
 

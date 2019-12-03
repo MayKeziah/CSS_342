@@ -1,0 +1,474 @@
+The command line argument(s) was BankTransIn.txt
+The following requests were denied:
+
+ERROR: W 10017 20000
+    Withdrawal request fail. Insufficient funds in 10017.
+
+ERROR: T 12539 765 43567
+    Transfer request fail. Account 4356 does not exist.
+
+ERROR: O Willis Bob 9876
+    Open Fail. Account number 9876 already exists.
+
+---------------------------------------------------
+
+History requests: 
+
+------- History of 1001: Cash, Johnny -------
+      Money Market:
+                  + $542
+                  - $72
+           Balance: $470
+
+Prime Money Market:
+                  + $1542
+                  + $1500
+           Balance: $3042
+
+    Long-Term Bond:
+                  + $5442
+                  + $5000
+           Balance: $10442
+
+   Short-Term Bond:
+                  + $7540
+                  + $7000
+           Balance: $14540
+
+    500 Index Fund:
+           Balance: $0
+
+Capital Value Fund:
+                  + $54
+           Balance: $54
+
+Growth Equity Fund:
+                  + $7542
+                  + $7576
+                  - $65
+           Balance: $15053
+
+ Growth Index Fund:
+                  + $5442
+                  + $6543
+                  - $1000
+                  - $54
+           Balance: $10931
+
+        Value Fund:
+           Balance: $0
+
+ Value Stock Index:
+           Balance: $0
+
+------- History of 12534: Williams, Hank -------
+    500 Index Fund:
+                  + $10000
+           Balance: $10000
+
+------- History of 1253: Williams, Hank -------
+      Money Market:
+                  + $10000
+           Balance: $10000
+
+Prime Money Market:
+                  + $10000
+           Balance: $10000
+
+    Long-Term Bond:
+                  + $10000
+                  - $10000
+           Balance: $0
+
+   Short-Term Bond:
+                  + $10000
+                  - $5000
+           Balance: $5000
+
+    500 Index Fund:
+                  + $10000
+           Balance: $10000
+
+Capital Value Fund:
+                  + $10000
+           Balance: $10000
+
+Growth Equity Fund:
+                  + $10000
+           Balance: $10000
+
+ Growth Index Fund:
+                  + $10000
+           Balance: $10000
+
+        Value Fund:
+                  + $10000
+           Balance: $10000
+
+ Value Stock Index:
+                  + $10000
+           Balance: $10000
+
+
+---------------------------------------------------
+
+All Bank Balances:
+
+------- 1001: Cash, Johnny -------
+      Money Market: $470
+Prime Money Market: $3042
+    Long-Term Bond: $10442
+   Short-Term Bond: $14540
+    500 Index Fund: $0
+Capital Value Fund: $54
+Growth Equity Fund: $15053
+ Growth Index Fund: $10931
+        Value Fund: $0
+ Value Stock Index: $0
+     Total balance: $54532
+
+------- 1253: Williams, Hank -------
+      Money Market: $10000
+Prime Money Market: $10000
+    Long-Term Bond: $0
+   Short-Term Bond: $5000
+    500 Index Fund: $10000
+Capital Value Fund: $10000
+Growth Equity Fund: $10000
+ Growth Index Fund: $10000
+        Value Fund: $10000
+ Value Stock Index: $9235
+     Total balance: $84235
+
+------- 9876: Nelson, Willie -------
+      Money Market: $0
+Prime Money Market: $0
+    Long-Term Bond: $0
+   Short-Term Bond: $0
+    500 Index Fund: $0
+Capital Value Fund: $0
+Growth Equity Fund: $0
+ Growth Index Fund: $0
+        Value Fund: $0
+ Value Stock Index: $0
+     Total balance: $0
+
+---------------------------------------------------
+
+________________________________________________________________________________________
+
+The command line argument(s) was BankTransIn2.txt
+The following requests were denied:
+
+ERROR: W 20124 7540
+    Withdrawal request fail. Insufficient funds in 20124.
+
+ERROR: T 31234 -20 19342
+    Transfer request fail. Account 3123 does not exist.
+
+ERROR: T 20126 -20 19342
+    Transfer request fail. Amount to withdraw from 20126, 
+    $-20, is negative or zero
+
+ERROR: T 20126 -20 20120
+    Transfer request fail. Amount to withdraw from 20126, 
+    $-20, is negative or zero
+
+ERROR: W 20127 20000
+    Withdrawal request fail. Insufficient funds in 20127.
+
+ERROR: W 30322 10000
+    Withdrawal request fail. Insufficient funds in 30322.
+
+ERROR: T 30329 765 43567
+    Transfer request fail. Account 4356 does not exist.
+
+ERROR: O Quintin Obrigt 9876
+    Open Fail. Account number 9876 already exists.
+
+ERROR: O Arebrhelid Akheb 3032
+    Open Fail. Account number 3032 already exists.
+
+ERROR: W 3031 200
+    Withdrawal request fail. Account 303 does not exist.
+
+---------------------------------------------------
+
+History requests: 
+
+------- History of 1001: Cash, Johnny -------
+      Money Market:
+                  + $542
+                  - $72
+           Balance: $470
+
+Prime Money Market:
+                  + $1542
+                  + $1500
+           Balance: $3042
+
+    Long-Term Bond:
+                  + $5442
+                  + $5000
+           Balance: $10442
+
+   Short-Term Bond:
+                  + $7540
+                  + $7000
+           Balance: $14540
+
+    500 Index Fund:
+           Balance: $0
+
+Capital Value Fund:
+                  + $54
+           Balance: $54
+
+Growth Equity Fund:
+                  + $7542
+                  + $7576
+                  - $65
+           Balance: $15053
+
+ Growth Index Fund:
+                  + $5442
+                  + $6543
+                  - $1000
+                  - $54
+           Balance: $10931
+
+        Value Fund:
+           Balance: $0
+
+ Value Stock Index:
+           Balance: $0
+
+------- History of 12534: Williams, Hank -------
+    500 Index Fund:
+                  + $10000
+           Balance: $10000
+
+------- History of 1253: Williams, Hank -------
+      Money Market:
+                  + $10000
+           Balance: $10000
+
+Prime Money Market:
+                  + $10000
+           Balance: $10000
+
+    Long-Term Bond:
+                  + $10000
+                  - $10000
+           Balance: $0
+
+   Short-Term Bond:
+                  + $10000
+                  - $5000
+           Balance: $5000
+
+    500 Index Fund:
+                  + $10000
+           Balance: $10000
+
+Capital Value Fund:
+                  + $10000
+           Balance: $10000
+
+Growth Equity Fund:
+                  + $10000
+           Balance: $10000
+
+ Growth Index Fund:
+                  + $10000
+           Balance: $10000
+
+        Value Fund:
+                  + $10000
+           Balance: $10000
+
+ Value Stock Index:
+                  + $10000
+           Balance: $10000
+
+------- History of 2012: May, Keziah -------
+      Money Market:
+                  + $542
+                  - $542
+           Balance: $0
+
+Prime Money Market:
+                  + $1542
+                  + $1500
+                  - $1458
+           Balance: $1584
+
+    Long-Term Bond:
+                  + $5000
+           Balance: $5000
+
+   Short-Term Bond:
+                  + $7540
+                  + $7000
+           Balance: $14540
+
+    500 Index Fund:
+           Balance: $0
+
+Capital Value Fund:
+                  + $54
+           Balance: $54
+
+Growth Equity Fund:
+                  + $7542
+                  + $7576
+           Balance: $15118
+
+ Growth Index Fund:
+                  + $5442
+                  + $6543
+                  - $1000
+                  - $54
+           Balance: $10931
+
+        Value Fund:
+           Balance: $0
+
+ Value Stock Index:
+           Balance: $0
+
+------- History of 30324: Iben, Jaschiln -------
+    500 Index Fund:
+                  + $1000
+           Balance: $1000
+
+------- History of 3032: Iben, Jaschiln -------
+      Money Market:
+                  + $1000
+           Balance: $1000
+
+Prime Money Market:
+                  + $1000
+           Balance: $1000
+
+    Long-Term Bond:
+                  + $1000
+           Balance: $1000
+
+   Short-Term Bond:
+                  + $1000
+                  - $500
+           Balance: $500
+
+    500 Index Fund:
+                  + $1000
+           Balance: $1000
+
+Capital Value Fund:
+                  + $1000
+           Balance: $1000
+
+Growth Equity Fund:
+                  + $1000
+           Balance: $1000
+
+ Growth Index Fund:
+                  + $1000
+           Balance: $1000
+
+        Value Fund:
+                  + $1000
+           Balance: $1000
+
+ Value Stock Index:
+                  + $1000
+           Balance: $1000
+
+
+---------------------------------------------------
+
+All Bank Balances:
+
+------- 1001: Cash, Johnny -------
+      Money Market: $470
+Prime Money Market: $3042
+    Long-Term Bond: $10442
+   Short-Term Bond: $14540
+    500 Index Fund: $0
+Capital Value Fund: $54
+Growth Equity Fund: $15053
+ Growth Index Fund: $10931
+        Value Fund: $0
+ Value Stock Index: $0
+     Total balance: $54532
+
+------- 1253: Williams, Hank -------
+      Money Market: $10000
+Prime Money Market: $10000
+    Long-Term Bond: $0
+   Short-Term Bond: $5000
+    500 Index Fund: $10000
+Capital Value Fund: $10000
+Growth Equity Fund: $10000
+ Growth Index Fund: $10000
+        Value Fund: $10000
+ Value Stock Index: $9235
+     Total balance: $84235
+
+------- 2012: May, Keziah -------
+      Money Market: $0
+Prime Money Market: $1584
+    Long-Term Bond: $5000
+   Short-Term Bond: $14540
+    500 Index Fund: $0
+Capital Value Fund: $54
+Growth Equity Fund: $15118
+ Growth Index Fund: $10931
+        Value Fund: $0
+ Value Stock Index: $0
+     Total balance: $47227
+
+------- 3031: Arebrhelid, Akheb -------
+      Money Market: $0
+Prime Money Market: $0
+    Long-Term Bond: $0
+   Short-Term Bond: $0
+    500 Index Fund: $0
+Capital Value Fund: $0
+Growth Equity Fund: $0
+ Growth Index Fund: $0
+        Value Fund: $0
+ Value Stock Index: $0
+     Total balance: $0
+
+------- 3032: Iben, Jaschiln -------
+      Money Market: $1000
+Prime Money Market: $1000
+    Long-Term Bond: $1000
+   Short-Term Bond: $500
+    500 Index Fund: $1000
+Capital Value Fund: $1000
+Growth Equity Fund: $1000
+ Growth Index Fund: $1000
+        Value Fund: $1000
+ Value Stock Index: $235
+     Total balance: $8735
+
+------- 9876: Nelson, Willie -------
+      Money Market: $0
+Prime Money Market: $0
+    Long-Term Bond: $0
+   Short-Term Bond: $0
+    500 Index Fund: $0
+Capital Value Fund: $0
+Growth Equity Fund: $0
+ Growth Index Fund: $0
+        Value Fund: $0
+ Value Stock Index: $0
+     Total balance: $0
+
+---------------------------------------------------
+
+________________________________________________________________________________________
+
+Done
